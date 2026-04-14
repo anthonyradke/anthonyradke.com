@@ -1,0 +1,5 @@
+Drop your resume PDF into this folder and rename it to:
+
+    resume.pdf
+
+The RESUME button in the nav bar already links to files/resume.pdf.

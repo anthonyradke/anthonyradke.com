@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="[YOUR NAME] — Mechanical Engineering Portfolio">
+    <title>[YOUR NAME] | Mechanical Engineer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <!-- ========== NAVIGATION ========== -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="#hero" class="nav-logo">[YOUR NAME]</a>
+            <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links" role="list">
+                <li><a href="#about">ABOUT</a></li>
+                <li><a href="#projects">PROJECTS</a></li>
+                <li><a href="#bio">BIO</a></li>
+                <li><a href="#contact">CONTACT</a></li>
+                <li><a href="files/resume.pdf" target="_blank" rel="noopener" class="nav-resume">RESUME</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ========== HERO ========== -->
+    <section id="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <img src="images/profile.jpg" alt="[YOUR NAME]" class="hero-avatar">
+            <h1>[YOUR NAME]</h1>
+            <p class="hero-title">Mechanical Engineer</p>
+            <p class="hero-location">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                [Your City, State]
+            </p>
+            <div class="hero-links">
+                <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener" class="social-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                    LinkedIn
+                </a>
+                <a href="https://github.com/yourusername" target="_blank" rel="noopener" class="social-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                    GitHub
+                </a>
+            </div>
+        </div>
+        <a href="#about" class="hero-scroll-hint" aria-label="Scroll down">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </a>
+    </section>
+
+    <!-- ========== TWO-COLUMN LAYOUT ========== -->
+    <div class="layout">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+
+            <div class="sidebar-card">
+                <div class="availability">
+                    <span class="availability-dot"></span>
+                    <p>Open to Opportunities</p>
+                </div>
+            </div>
+
+            <div class="sidebar-card">
+                <h3 class="sidebar-label">Core Skills</h3>
+                <ul class="skills-list">
+                    <li>CAD / SolidWorks</li>
+                    <li>FEA / Simulation</li>
+                    <li>Prototyping &amp; Fabrication</li>
+                    <li>GD&amp;T</li>
+                    <li>Thermal Analysis</li>
+                    <li>Python / MATLAB</li>
+                </ul>
+            </div>
+
+            <div class="sidebar-card">
+                <h3 class="sidebar-label">Education</h3>
+                <div class="education-item">
+                    <p class="edu-school">[University Name]</p>
+                    <p class="edu-degree">B.S. Mechanical Engineering</p>
+                    <p class="edu-year">Class of [Year]</p>
+                </div>
+            </div>
+
+            <div class="sidebar-card">
+                <h3 class="sidebar-label">Certifications</h3>
+                <ul class="cert-list">
+                    <li>SolidWorks CSWA</li>
+                    <li>[Add Certification]</li>
+                </ul>
+            </div>
+
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main class="main-content">
+
+            <!-- ABOUT -->
+            <section id="about">
+                <h2>About Me</h2>
+                <div class="about-content">
+                    <img src="images/about.jpg" alt="[YOUR NAME]" class="about-image">
+                    <div class="about-text">
+                        <p>Hi, I'm <strong>[YOUR NAME]</strong> — a mechanical engineer passionate about [your interests]. I specialize in [your specialty] and love turning ideas from concept to reality through hands-on design and prototyping.</p>
+                        <p>Currently [studying at / working at] [institution/company], I'm focused on [current focus area]. I'm always looking to solve challenging engineering problems and collaborate on meaningful projects.</p>
+                        <p>Outside of engineering, you'll find me [hobby / interest that shows personality].</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- PROJECTS -->
+            <section id="projects">
+                <h2>Projects</h2>
+                <div class="projects-grid">
+
+                    <div class="project-card">
+                        <div class="project-image-wrap">
+                            <img src="images/projects/project1.jpg" alt="Project 1" loading="lazy">
+                            <div class="project-overlay"><span>View Details</span></div>
+                        </div>
+                        <div class="project-info">
+                            <h3>Project Title One</h3>
+                            <p class="project-tags">SolidWorks &middot; FEA &middot; Prototyping</p>
+                            <p class="project-desc">Brief description of the project, what problem it solved, and what your role was in designing and developing it.</p>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-image-wrap">
+                            <img src="images/projects/project2.jpg" alt="Project 2" loading="lazy">
+                            <div class="project-overlay"><span>View Details</span></div>
+                        </div>
+                        <div class="project-info">
+                            <h3>Project Title Two</h3>
+                            <p class="project-tags">CAD &middot; Thermal Analysis &middot; MATLAB</p>
+                            <p class="project-desc">Brief description of the project, what problem it solved, and what your role was in designing and developing it.</p>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-image-wrap">
+                            <img src="images/projects/project3.jpg" alt="Project 3" loading="lazy">
+                            <div class="project-overlay"><span>View Details</span></div>
+                        </div>
+                        <div class="project-info">
+                            <h3>Project Title Three</h3>
+                            <p class="project-tags">PCB Design &middot; Controls &middot; Python</p>
+                            <p class="project-desc">Brief description of the project, what problem it solved, and what your role was in designing and developing it.</p>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-image-wrap">
+                            <img src="images/projects/project4.jpg" alt="Project 4" loading="lazy">
+                            <div class="project-overlay"><span>View Details</span></div>
+                        </div>
+                        <div class="project-info">
+                            <h3>Project Title Four</h3>
+                            <p class="project-tags">Manufacturing &middot; GD&amp;T &middot; CFD</p>
+                            <p class="project-desc">Brief description of the project, what problem it solved, and what your role was in designing and developing it.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- BIO -->
+            <section id="bio">
+                <h2>Bio</h2>
+                <div class="timeline">
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-year">2024</div>
+                        <div class="timeline-content">
+                            <h3>[Company / Organization]</h3>
+                            <p class="timeline-role">Engineering Intern</p>
+                            <p>Describe what you did, what you learned, and key accomplishments during this role.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-year">2023</div>
+                        <div class="timeline-content">
+                            <h3>[University / Lab Name]</h3>
+                            <p class="timeline-role">Undergraduate Research Assistant</p>
+                            <p>Describe the research project, your contributions, and any publications or presentations.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-year">2022</div>
+                        <div class="timeline-content">
+                            <h3>[Club / Team Name]</h3>
+                            <p class="timeline-role">Design Lead — [Engineering Team e.g. Formula SAE]</p>
+                            <p>Describe your role on the team, what subsystem you owned, and how the season went.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-year">2021</div>
+                        <div class="timeline-content">
+                            <h3>[University Name]</h3>
+                            <p class="timeline-role">Started B.S. Mechanical Engineering</p>
+                            <p>Began undergraduate studies, joined [club/team], and discovered a passion for [specialty area].</p>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- CONTACT -->
+            <section id="contact">
+                <h2>Contact</h2>
+                <p class="contact-intro">Have a project, opportunity, or question? I'd love to hear from you.</p>
+                <!--
+                    To make the contact form work, sign up at https://formspree.io (free).
+                    Replace YOUR_FORM_ID below with the ID they give you.
+                    Then change the form action attribute and remove the data-static attribute.
+                -->
+                <form
+                    class="contact-form"
+                    id="contactForm"
+                    action="https://formspree.io/f/YOUR_FORM_ID"
+                    method="POST"
+                    data-static="true"
+                >
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" placeholder="Your Name" required autocomplete="name">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="your@email.com" required autocomplete="email">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" placeholder="What's this about?">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" placeholder="Your message..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit">Send Message</button>
+                    <p class="form-notice" id="formNotice" aria-live="polite"></p>
+                </form>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- ========== FOOTER ========== -->
+    <footer>
+        <p>&copy; <span id="footerYear"></span> [YOUR NAME] &middot; Mechanical Engineer</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
