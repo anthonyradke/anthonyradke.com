@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project Title One | [YOUR NAME]</title>
+    <title>Automated Precision Seed Dispensing System | Anthony Radke</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -32,61 +32,296 @@
 
                 <a href="../index.html#projects" class="back-link">← Back to Projects</a>
 
-                <h2>Project Title One</h2>
+                <h2>Automated Precision Seed Dispensing System</h2>
 
-                <img src="../images/projects/project1.jpg" alt="Project Title One" class="project-detail-image">
+                <!-- PARTNER LOGOS -->
+                <div class="project-logos">
+                    <div class="project-logo-card">
+                        <div class="project-logo-slot">
+                            <!-- Replace inner div with: <img src="../images/logo-dcc.png" alt="Design Center Colorado"> -->
+                            <div class="project-logo-placeholder-icon"></div>
+                        </div>
+                        <div class="project-logo-meta">
+                            <span class="project-logo-label">Program</span>
+                            <span class="project-logo-org">CU Boulder — Design Center Colorado</span>
+                        </div>
+                    </div>
+                    <div class="project-logo-card">
+                        <div class="project-logo-slot">
+                            <!-- Replace inner div with: <img src="../images/logo-rooted.png" alt="Rooted Robotics"> -->
+                            <div class="project-logo-placeholder-icon"></div>
+                        </div>
+                        <div class="project-logo-meta">
+                            <span class="project-logo-label">Client</span>
+                            <span class="project-logo-org">Rooted Robotics</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- HERO CAROUSEL -->
+                <div class="hero-carousel" id="heroCarousel">
+                    <div class="hero-carousel-track" id="heroTrack">
+                        <div class="hero-carousel-slide" data-caption="Full assembly — complete machine at dramatic angle">
+                            <img src="../images/projects/project1/project1.png" alt="Full assembly render" data-img-title="Full Assembly">
+                        </div>
+                        <div class="hero-carousel-slide" data-caption="Exploded view — frame, hopper, shaft assembly, and motor subassemblies separated">
+                            <img src="../images/projects/project1/project1.png" alt="Exploded assembly render" data-img-title="Exploded Assembly">
+                        </div>
+                        <div class="hero-carousel-slide" data-caption="Sheet metal frame — front panel, rear panel, motor mount plate, and control panel">
+                            <img src="../images/projects/project1/project1.png" alt="Sheet metal frame render" data-img-title="Sheet Metal Frame">
+                        </div>
+                        <div class="hero-carousel-slide" data-caption="Sliding hopper on 80/20 extrusion rails with cam-lock clamp and polycarbonate window">
+                            <img src="../images/projects/project1/project1.png" alt="Sliding hopper render" data-img-title="Sliding Hopper">
+                        </div>
+                        <div class="hero-carousel-slide" data-caption="Rotating shaft assembly — NEMA 34 motor, spider coupling, keyed shaft, resin sleeve, collars, and pillow blocks">
+                            <img src="../images/projects/project1/project1.png" alt="Rotating shaft assembly render" data-img-title="Rotating Shaft Assembly">
+                        </div>
+                    </div>
+
+                    <button class="carousel-btn carousel-btn-prev" id="carouselPrev" aria-label="Previous image">&#8249;</button>
+                    <button class="carousel-btn carousel-btn-next" id="carouselNext" aria-label="Next image">&#8250;</button>
+
+                    <div class="carousel-dots" id="carouselDots"></div>
+                    <div class="carousel-caption" id="carouselCaption"></div>
+                </div>
 
                 <div class="project-meta">
                     <div class="project-meta-item">
-                        <span class="project-meta-label">Tools</span>
-                        <span class="project-meta-value">SolidWorks, ANSYS</span>
+                        <span class="project-meta-label">Role</span>
+                        <span class="project-meta-value">CAD Engineer</span>
                     </div>
                     <div class="project-meta-item">
-                        <span class="project-meta-label">Category</span>
-                        <span class="project-meta-value">FEA / Prototyping</span>
+                        <span class="project-meta-label">Client</span>
+                        <span class="project-meta-value">Rooted Robotics</span>
+                    </div>
+                    <div class="project-meta-item">
+                        <span class="project-meta-label">Program</span>
+                        <span class="project-meta-value">CU Boulder — Design Center Colorado</span>
                     </div>
                     <div class="project-meta-item">
                         <span class="project-meta-label">Year</span>
-                        <span class="project-meta-value">2024</span>
+                        <span class="project-meta-value">2025 – 2026</span>
                     </div>
                     <div class="project-meta-item">
-                        <span class="project-meta-label">Role</span>
-                        <span class="project-meta-value">Lead Designer</span>
+                        <span class="project-meta-label">Team Size</span>
+                        <span class="project-meta-value">8 Engineers</span>
+                    </div>
+                    <div class="project-meta-item">
+                        <span class="project-meta-label">Status</span>
+                        <span class="project-meta-value">Built &amp; Delivered</span>
                     </div>
                 </div>
 
                 <div class="skill-tags">
                     <span class="skill-tag">SolidWorks</span>
-                    <span class="skill-tag">ANSYS FEA</span>
-                    <span class="skill-tag">Prototyping</span>
+                    <span class="skill-tag">SolidWorks Visualize</span>
+                    <span class="skill-tag">Sheet Metal Design</span>
                     <span class="skill-tag">GD&amp;T</span>
-                    <span class="skill-tag">[Add Skill]</span>
+                    <span class="skill-tag">Mechanical Assembly</span>
+                    <span class="skill-tag">DFM</span>
+                    <span class="skill-tag">Tolerance Analysis</span>
+                    <span class="skill-tag">Rapid Prototyping</span>
                 </div>
 
                 <div class="project-body">
+
                     <h3>Overview</h3>
-                    <p>Describe the project at a high level — what it is, what problem it was solving, and why it mattered. Give the reader enough context to understand the stakes before you dive into technical details.</p>
+                    <p>
+                        Rooted Robotics builds compact automation tools for small-scale indoor farms. Their existing
+                        microgreens seeder couldn't handle crops like lettuce, basil, or tree seedlings — those require
+                        a single seed placed precisely in the center of each soil cell. Our team of eight engineers
+                        designed, built, and delivered a fully modular precision seeding system that integrates with
+                        Rooted Robotics' existing conveyor infrastructure and targets a bill of materials under $5,000.
+                    </p>
+                    <p>
+                        The system uses a motor-driven rotating shaft fitted with an interchangeable resin-printed sleeve.
+                        Seeds fall from a sliding hopper into slots machined into the sleeve surface, and as the shaft
+                        rotates in sync with the tray's position on the conveyor, each seed is released into the correct
+                        cell — one seed per cell, row by row.
+                    </p>
 
-                    <h3>Design &amp; Approach</h3>
-                    <p>Walk through the design process. What constraints did you work within? What trade-offs did you consider? How did you arrive at your final approach?</p>
+                    <!-- STAT ROW -->
+                    <div class="project-stat-row">
+                        <div class="project-stat">
+                            <div class="project-stat-value">94%</div>
+                            <div class="project-stat-label">Seeding Accuracy</div>
+                        </div>
+                        <div class="project-stat">
+                            <div class="project-stat-value">&lt;$4,700</div>
+                            <div class="project-stat-label">Total Build Cost</div>
+                        </div>
+                        <div class="project-stat">
+                            <div class="project-stat-value">3–10s</div>
+                            <div class="project-stat-label">Per-Tray Cycle Time</div>
+                        </div>
+                        <div class="project-stat">
+                            <div class="project-stat-value">10,000+</div>
+                            <div class="project-stat-label">Seed Capacity</div>
+                        </div>
+                    </div>
+
+                    <h3>My Role</h3>
+                    <p>
+                        I served as the team's CAD engineer, owning the full mechanical design from individual parts
+                        through complete assemblies and the final drawing package. This included every subassembly
+                        except the internal layout of the electrical enclosure: the rotating shaft assembly, sliding
+                        hopper, sheet metal frame, bearing blocks, and all hardware interfaces. I also participated
+                        in mechanical assembly of the physical machine and led a significant portion of testing —
+                        brush interface selection, sleeve geometry iteration, full-system seeding runs, and timed
+                        cycle tests.
+                    </p>
+
+                    <!-- RENDER PLACEHOLDER: exploded assembly showing all subassemblies separated -->
+                    <figure class="project-figure">
+                        <img src="../images/projects/project1/project1.png" alt="Exploded assembly render" class="img-zoomable" data-img-title="Exploded Assembly" data-img-index="1">
+                        <figcaption>Exploded assembly — frame, hopper, shaft assembly, and motor subassemblies. [Replace with exploded render]</figcaption>
+                    </figure>
+
+                    <h3>Sheet Metal Frame</h3>
+                    <p>
+                        The structural backbone is four bent sheet-metal panels laser-cut from 3/16" 5052 aluminum,
+                        outsourced to OshCut. I designed each panel in SolidWorks using sheet metal features, building
+                        in the bend geometry to serve a dual purpose: stiffening the panels under dynamic motor loads
+                        and creating flat mounting faces for the electrical enclosure — eliminating the need for
+                        secondary brackets entirely.
+                    </p>
+                    <p>
+                        The front panel carries all operator-facing controls (Grayhill touch encoder and e-stop).
+                        A dedicated motor mounting plate between the front and rear panels positions the Teknic NEMA 34
+                        servo motor with a precision bolt pattern, minimizing shaft-to-motor misalignment without
+                        adapter hardware. Triangular cutouts reduce panel mass while maintaining load paths and
+                        providing wiring access. All four panels bolt directly to Rooted Robotics' existing conveyor
+                        slotted mounting pattern.
+                    </p>
+
+                    <!-- RENDER PLACEHOLDER: frame panels isolated — good angle showing bends and cutouts -->
+                    <figure class="project-figure">
+                        <img src="../images/projects/project1/project1.png" alt="Frame sheet metal render" class="img-zoomable" data-img-title="Sheet Metal Frame" data-img-index="2">
+                        <figcaption>Sheet metal frame — front panel, rear panel, motor mount plate, and control panel. [Replace with frame render]</figcaption>
+                    </figure>
+
+                    <h3>Sliding Hopper</h3>
+                    <p>
+                        The client originally asked for a removable hopper so operators could swap seed types quickly.
+                        I designed a sliding-hopper solution instead — the hopper is rigidly mounted to two Item24
+                        carriages that ride in T-slots of 40×40mm aluminum extrusion rails. The operator loosens a
+                        single cam-lock clamp, slides the hopper to the far left over a collection bucket, then slides
+                        it back until it contacts integrated hard stops. One motion, fully repeatable positioning,
+                        no lifting required.
+                    </p>
+                    <p>
+                        The two hopper panels are cut from 1/16" 5052 aluminum. Mounting flaps are integrated directly
+                        into the sheet metal geometry, eliminating auxiliary brackets. A laser-cut polycarbonate window
+                        on the front panel lets operators monitor seed level without disturbing the hopper. The lower
+                        edge uses a strip brush interface (selected through testing) to prevent seed crushing while
+                        maintaining contact across the full adjustment range of tray heights.
+                    </p>
+
+                    <!-- RENDER PLACEHOLDER: hopper on rails, angled view showing window, clamp, and slide mechanism -->
+                    <figure class="project-figure">
+                        <img src="../images/projects/project1/project1.png" alt="Sliding hopper render" class="img-zoomable" data-img-title="Sliding Hopper" data-img-index="3">
+                        <figcaption>Sliding hopper on 80/20 aluminum extrusion rails, with cam-lock clamp and polycarbonate seed-level window. [Replace with hopper render]</figcaption>
+                    </figure>
+
+                    <h3>Rotating Shaft Assembly</h3>
+                    <p>
+                        The shaft assembly is the precision core of the system. It consists of a 20mm 304 stainless-steel
+                        keyed shaft sourced from McMaster-Carr, a resin-printed interchangeable sleeve, two oil-embedded
+                        bronze sleeve bearings in aluminum pillow blocks, a spider coupling connecting the NEMA 34 motor,
+                        and a dual-collar axial constraint system.
+                    </p>
+                    <p>
+                        The sleeve is printed on a resin printer at Rooted Robotics' facility at 100% infill to prevent
+                        cracking. Each sleeve contains six circumferential rows of slots — one row per tray cell row —
+                        that capture a single seed and release it as the slot passes the bottom of its rotation arc.
+                        Sleeves are interchangeable for different tray configurations (5 to 13 cells per row) and seed
+                        sizes (3–7mm diameter). On the left, a two-piece clamping collar sets the axial home position.
+                        On the right, a quick-release collar enables tool-free sleeve swaps in seconds. The right-side
+                        bearing block is secured with wing nuts so it can be lifted away to free the sleeve without
+                        any tools.
+                    </p>
+                    <p>
+                        The mounting blocks for both bearings are machined from 6061 aluminum bar stock. I designed
+                        the block geometry for simplicity — bandsaw and end mill operations only — while holding the
+                        shaft elevation and alignment relative to the hopper outlet.
+                    </p>
+
+                    <!-- RENDER PLACEHOLDER: shaft assembly isolated — motor side to bearing side, full length -->
+                    <figure class="project-figure">
+                        <img src="../images/projects/project1/project1.png" alt="Rotating shaft assembly render" class="img-zoomable" data-img-title="Rotating Shaft Assembly" data-img-index="4">
+                        <figcaption>Rotating shaft assembly — NEMA 34 motor, spider coupling, keyed shaft, resin sleeve, collars, bearings, and pillow blocks. [Replace with shaft assembly render]</figcaption>
+                    </figure>
+
+                    <!-- RENDER PLACEHOLDER: sleeve close-up showing slot geometry -->
+                    <div class="project-figure-grid">
+                        <figure>
+                            <img src="../images/projects/project1/project1.png" alt="Sleeve slot geometry close-up" class="img-zoomable" data-img-title="Resin Sleeve — Slot Geometry" data-img-index="5">
+                            <figcaption>Resin-printed sleeve — large-cone slot geometry selected after testing 8 profiles. [Replace with sleeve close-up]</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="../images/projects/project1/project1.png" alt="Hopper brush interface close-up" class="img-zoomable" data-img-title="Hopper Brush Interface" data-img-index="6">
+                            <figcaption>Hopper brush interface — strip brushes mounted perpendicular to the sleeve to prevent seed crushing. [Replace with brush interface render]</figcaption>
+                        </figure>
+                    </div>
+
+                    <h3>Testing &amp; Results</h3>
+                    <p>
+                        Testing spanned several phases over two semesters. Early prototyping used PLA sleeves and
+                        manual shaft rotation to isolate the seed-crushing problem at the hopper-sleeve interface.
+                        That work drove the switch to a modified hopper geometry and the strip brush solution.
+                    </p>
+                    <p>
+                        I was directly involved in three major test campaigns:
+                    </p>
                     <ul>
-                        <li>Key design decision or challenge #1</li>
-                        <li>Key design decision or challenge #2</li>
-                        <li>Key design decision or challenge #3</li>
+                        <li><strong>Brush selection</strong> — Tested brushes of varying bristle length, stiffness,
+                            and filament material. Evaluated seed preservation, frictional drag on the shaft, and
+                            single-seed slot-loading consistency. Final design uses two short, thin brushes in a
+                            single holder, mounted perpendicular to the sleeve inside the hopper.</li>
+                        <li><strong>Sleeve geometry iteration</strong> — Evaluated 8 slot profiles (teardrop, pyramid,
+                            cylinder, obround, bulb, D-shape, large cone, small cone) using slow-motion camera
+                            analysis of seed release. Bulb, teardrop, and pyramid were eliminated for double-feeding.
+                            The large cone geometry achieved the most consistent single-seed loading and uniform
+                            release timing, and was selected for production.</li>
+                        <li><strong>Full system seeding and timing runs</strong> — Ran the assembled machine on a
+                            laser-engraved acrylic accuracy target placed over the tray. Frame-by-frame camera
+                            analysis confirmed cycle times and seed placement within the 5mm diameter tolerance
+                            requirement.</li>
                     </ul>
-
-                    <h3>Results</h3>
-                    <p>What was the outcome? Include measurable results where possible — weight savings, stress reduction, efficiency gains, test results, etc. This is the most compelling part for a reviewer.</p>
+                    <p>
+                        The system achieved approximately <strong>94% seeding accuracy</strong> within the 5mm cell
+                        tolerance, completing a full tray in the 3–10 second window specified by the client. The final
+                        build came in at $4,692.57 — within the $5,000 budget. Germination rate testing against a
+                        hand-planted control is ongoing.
+                    </p>
 
                     <h3>What I Learned</h3>
-                    <p>Reflect on the most important takeaways from this project — technical skills developed, lessons about the design process, or anything you would do differently next time.</p>
+                    <p>
+                        This project sharpened my ability to design for manufacturability under real constraints.
+                        Every sheet metal part had to be confirmed manufacturable with OshCut before ordering, and
+                        iterating on the hopper geometry to solve the seed-crushing problem taught me how much a
+                        single interface can change a design's entire architecture.
+                    </p>
+                    <p>
+                        Owning the full CAD model — from individual fasteners to the complete assembly — also gave
+                        me a much deeper appreciation for tolerance stack-ups. Small positional errors in the shaft
+                        relative to the hopper outlet had an outsized effect on seeding accuracy, and managing that
+                        through the mounting block geometry was one of the most demanding parts of the design.
+                    </p>
+                    <p>
+                        Building and testing the physical machine alongside the CAD work closed the loop in a way
+                        that pure design work doesn't. Watching a sleeve geometry that looked right on screen fail
+                        to load seeds consistently, then iterating back to CAD to adjust the profile, was the most
+                        valuable engineering feedback cycle I've experienced.
+                    </p>
+
                 </div>
 
             </div>
         </main>
     </div>
 
-    <!-- ========== PDF MODAL ========== -->
+    <!-- ========== PDF MODAL (certs only) ========== -->
     <div class="pdf-modal" id="pdfModal" role="dialog" aria-modal="true">
         <div class="pdf-modal-inner">
             <div class="pdf-modal-header">
@@ -99,6 +334,254 @@
         </div>
     </div>
 
+    <!-- ========== IMAGE MODAL ========== -->
+    <div class="img-modal" id="imgModal" role="dialog" aria-modal="true">
+        <div class="img-modal-inner">
+            <div class="img-modal-header">
+                <div class="img-modal-header-left">
+                    <span class="img-modal-title" id="imgModalTitle"></span>
+                    <span class="img-modal-counter" id="imgModalCounter"></span>
+                </div>
+                <button class="img-modal-close" id="imgModalClose" aria-label="Close">&times;</button>
+            </div>
+            <div class="img-modal-carousel">
+                <div class="img-modal-track" id="imgModalTrack"></div>
+                <button class="carousel-btn carousel-btn-prev" id="imgModalPrev" aria-label="Previous image">&#8249;</button>
+                <button class="carousel-btn carousel-btn-next" id="imgModalNext" aria-label="Next image">&#8250;</button>
+            </div>
+            <div class="img-modal-footer">
+                <div class="img-modal-caption" id="imgModalCaption"></div>
+                <div class="img-modal-dots" id="imgModalDots"></div>
+            </div>
+        </div>
+    </div>
+
     <script src="../js/main.js"></script>
+    <script>
+    // ── Global image registry ──────────────────────────────────────────────
+    const PROJECT_IMGS = [
+        { src: '../images/projects/project1/project1.png', title: 'Full Assembly',               caption: 'Full assembly — complete machine at dramatic angle' },
+        { src: '../images/projects/project1/project1.png', title: 'Exploded Assembly',            caption: 'Exploded view — frame, hopper, shaft assembly, and motor subassemblies separated' },
+        { src: '../images/projects/project1/project1.png', title: 'Sheet Metal Frame',            caption: 'Sheet metal frame — front panel, rear panel, motor mount plate, and control panel' },
+        { src: '../images/projects/project1/project1.png', title: 'Sliding Hopper',              caption: 'Sliding hopper on 80/20 extrusion rails with cam-lock clamp and polycarbonate window' },
+        { src: '../images/projects/project1/project1.png', title: 'Rotating Shaft Assembly',      caption: 'NEMA 34 motor, spider coupling, keyed shaft, resin sleeve, collars, and pillow blocks' },
+        { src: '../images/projects/project1/project1.png', title: 'Resin Sleeve — Slot Geometry', caption: 'Large-cone slot geometry selected after testing 8 profiles' },
+        { src: '../images/projects/project1/project1.png', title: 'Hopper Brush Interface',       caption: 'Strip brushes mounted perpendicular to the sleeve to prevent seed crushing' },
+    ];
+
+    // ── Image modal ────────────────────────────────────────────────────────
+    const imgModal       = document.getElementById('imgModal');
+    const imgModalTrack  = document.getElementById('imgModalTrack');
+    const imgModalTitle  = document.getElementById('imgModalTitle');
+    const imgModalCounter= document.getElementById('imgModalCounter');
+    const imgModalCaption= document.getElementById('imgModalCaption');
+    const imgModalDots   = document.getElementById('imgModalDots');
+
+    let modalCurrent = 0;
+
+    // Build modal slides + dots from registry
+    const mDots = PROJECT_IMGS.map((item, i) => {
+        const slide = document.createElement('div');
+        slide.className = 'img-modal-slide';
+        const img = document.createElement('img');
+        img.src = item.src;
+        img.alt = item.title;
+        slide.appendChild(img);
+        imgModalTrack.appendChild(slide);
+
+        const dot = document.createElement('button');
+        dot.className = 'carousel-dot';
+        dot.setAttribute('aria-label', 'View ' + item.title);
+        dot.addEventListener('click', () => modalGoTo(i));
+        imgModalDots.appendChild(dot);
+        return dot;
+    });
+
+    function modalGoTo(index, instant) {
+        const prev = modalCurrent;
+        modalCurrent = (index + PROJECT_IMGS.length) % PROJECT_IMGS.length;
+
+        if (instant) {
+            imgModalTrack.style.transition = 'none';
+            void imgModalTrack.offsetWidth;
+        } else {
+            imgModalTrack.style.transition = '';
+        }
+        imgModalTrack.style.transform = `translateX(-${modalCurrent * 100}%)`;
+
+        mDots.forEach((d, i) => d.classList.toggle('active', i === modalCurrent));
+        imgModalTitle.textContent   = PROJECT_IMGS[modalCurrent].title;
+        imgModalCounter.textContent = `${modalCurrent + 1} / ${PROJECT_IMGS.length}`;
+
+        if (instant || prev === modalCurrent) {
+            imgModalCaption.textContent = PROJECT_IMGS[modalCurrent].caption;
+        } else {
+            imgModalCaption.classList.add('fading');
+            setTimeout(() => {
+                imgModalCaption.textContent = PROJECT_IMGS[modalCurrent].caption;
+                imgModalCaption.classList.remove('fading');
+            }, 150);
+        }
+    }
+
+    function openImgModal(index) {
+        imgModal.classList.add('active');
+        modalGoTo(index, true);
+    }
+
+    function closeImgModal() {
+        imgModal.classList.add('closing');
+        setTimeout(() => imgModal.classList.remove('active', 'closing'), 220);
+    }
+
+    document.getElementById('imgModalClose').addEventListener('click', closeImgModal);
+    document.getElementById('imgModalPrev').addEventListener('click', () => modalGoTo(modalCurrent - 1));
+    document.getElementById('imgModalNext').addEventListener('click', () => modalGoTo(modalCurrent + 1));
+    imgModal.addEventListener('click', e => { if (e.target === imgModal) closeImgModal(); });
+
+    document.addEventListener('keydown', e => {
+        if (!imgModal.classList.contains('active')) return;
+        if (e.key === 'Escape')      closeImgModal();
+        if (e.key === 'ArrowLeft')   modalGoTo(modalCurrent - 1);
+        if (e.key === 'ArrowRight')  modalGoTo(modalCurrent + 1);
+    });
+
+    // ── Hero carousel (seamless loop) ──────────────────────────────────────
+    (function () {
+        const track    = document.getElementById('heroTrack');
+        const dotsWrap = document.getElementById('carouselDots');
+        const captionEl= document.getElementById('carouselCaption');
+        const origSlides = Array.from(track.querySelectorAll('.hero-carousel-slide'));
+        const total    = origSlides.length;
+
+        // Clone first and last for seamless wrapping
+        const cloneLast  = origSlides[total - 1].cloneNode(true);
+        const cloneFirst = origSlides[0].cloneNode(true);
+        track.insertBefore(cloneLast, origSlides[0]);
+        track.appendChild(cloneFirst);
+        // Track order: [cloneLast, s0, s1, ..., s(n-1), cloneFirst]
+        // Cloned indices: 0=cloneLast, 1..total=real slides, total+1=cloneFirst
+
+        let ci         = 1; // current cloned index (starts at real slide 0)
+        let realCurrent= 0;
+        let autoTimer  = null;
+        let transitioning = false;
+
+        function clonedToReal(c) {
+            if (c === 0)         return total - 1;
+            if (c === total + 1) return 0;
+            return c - 1;
+        }
+
+        function updateCaption(text) {
+            captionEl.classList.add('fading');
+            setTimeout(() => {
+                captionEl.textContent = text;
+                captionEl.classList.remove('fading');
+            }, 150);
+        }
+
+        function moveTo(newCi, instant) {
+            if (instant) {
+                track.style.transition = 'none';
+                void track.offsetWidth;
+            } else {
+                track.style.transition = '';
+            }
+            track.style.transform = `translateX(-${newCi * 100}%)`;
+            ci = newCi;
+            realCurrent = clonedToReal(ci);
+            dots.forEach((d, i) => d.classList.toggle('active', i === realCurrent));
+            if (!instant) updateCaption(origSlides[realCurrent].dataset.caption || '');
+        }
+
+        // Build dots
+        const dots = origSlides.map((_, i) => {
+            const d = document.createElement('button');
+            d.className = 'carousel-dot';
+            d.setAttribute('aria-label', 'Go to slide ' + (i + 1));
+            d.addEventListener('click', () => { moveTo(i + 1, false); resetAuto(); });
+            dotsWrap.appendChild(d);
+            return d;
+        });
+
+        function resetAuto() {
+            clearInterval(autoTimer);
+            autoTimer = setInterval(() => { moveTo(ci + 1, false); }, 4500);
+        }
+
+        // After transition ends, silently correct position if we landed on a clone
+        track.addEventListener('transitionend', () => {
+            if (ci === 0)         moveTo(total, true);     // was clone of last → jump to real last
+            else if (ci === total + 1) moveTo(1, true);    // was clone of first → jump to real first
+        });
+
+        document.getElementById('carouselPrev').addEventListener('click', () => { moveTo(ci - 1, false); resetAuto(); });
+        document.getElementById('carouselNext').addEventListener('click', () => { moveTo(ci + 1, false); resetAuto(); });
+
+        // Click anywhere on carousel (not buttons) → open image modal
+        document.getElementById('heroCarousel').addEventListener('click', e => {
+            if (e.target.closest('.carousel-btn') || e.target.closest('.carousel-dots')) return;
+            openImgModal(realCurrent); // indices 0–4 match PROJECT_IMGS 0–4
+        });
+
+        // Pause on hover
+        const carousel = document.getElementById('heroCarousel');
+        carousel.addEventListener('mouseenter', () => clearInterval(autoTimer));
+        carousel.addEventListener('mouseleave', resetAuto);
+
+        // Touch swipe
+        let touchStartX = 0;
+        carousel.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
+        carousel.addEventListener('touchend', e => {
+            const dx = e.changedTouches[0].clientX - touchStartX;
+            if (Math.abs(dx) > 40) { moveTo(ci + (dx < 0 ? 1 : -1), false); resetAuto(); }
+        });
+
+        // Init — set position without transition, set caption text directly
+        moveTo(1, true);
+        captionEl.textContent = origSlides[0].dataset.caption || '';
+        resetAuto();
+    })();
+
+    // ── Inline figure image modal ──────────────────────────────────────────
+    document.querySelectorAll('.img-zoomable').forEach(img => {
+        img.addEventListener('click', () => {
+            const index = parseInt(img.dataset.imgIndex, 10);
+            if (!isNaN(index)) openImgModal(index);
+        });
+    });
+
+    // ── Scroll reveal ──────────────────────────────────────────────────────
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('revealed');
+                revealObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.08 });
+
+    document.querySelectorAll(
+        '.project-body h3, .project-body p, .project-body ul, .project-figure, .project-figure-grid'
+    ).forEach(el => {
+        el.classList.add('scroll-reveal');
+        revealObserver.observe(el);
+    });
+
+    // ── Stat card staggered entrance ───────────────────────────────────────
+    const statObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.querySelectorAll('.project-stat').forEach((stat, i) => {
+                    setTimeout(() => stat.classList.add('stat-visible'), i * 90);
+                });
+                statObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.2 });
+
+    document.querySelectorAll('.project-stat-row').forEach(row => statObserver.observe(row));
+    </script>
 </body>
 </html>
