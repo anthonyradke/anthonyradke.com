@@ -181,7 +181,6 @@ app-sidebar {
     margin: 0 auto 14px;
     background: var(--card-bg);
     transition: box-shadow 0.3s ease, border-color 0.3s ease;
-    image-rendering: smooth;
 }
 
 .sidebar-avatar.avatar-breathing {
@@ -500,29 +499,39 @@ app-sidebar {
    =========================================== */
 .about-content {
     display: flex;
-    gap: 36px;
+    gap: 40px;
     align-items: flex-start;
 }
 
-.about-image {
-    width: 200px;
-    height: 230px;
-    object-fit: cover;
-    border-radius: var(--radius);
+.about-image-frame {
+    width: 700px;  /* ← frame size (visible area) */
+    height: 700px; /* ← frame size (visible area) */
     flex-shrink: 0;
-    background: var(--card-bg);
+    border-radius: var(--radius);
     border: 1px solid var(--border);
-    image-rendering: smooth;
+    background: var(--card-bg);
+    overflow: hidden;
 }
 
-.about-text p {
+.about-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 40%; /* pan — X% Y%: 0%=left/top, 50%=center, 100%=right/bottom */
+    transform: scale(1.1);    /* zoom — 1.0=none, 1.2=20% in, 1.5=50% in */
+    transform-origin: 50% 20%; 
+    image-rendering: high-quality;
+    display: block;
+}
+
+.about-text > p {
     font-size: 15px;
     color: var(--text-secondary);
     line-height: 1.85;
     margin-bottom: 16px;
 }
 
-.about-text p:last-child {
+.about-text > p:last-child {
     margin-bottom: 0;
 }
 
@@ -639,6 +648,10 @@ app-sidebar {
     padding-left: 36px;
 }
 
+.about-text .timeline {
+    margin-top: 24px;
+}
+
 .timeline::before {
     content: '';
     position: absolute;
@@ -691,20 +704,28 @@ app-sidebar {
 }
 
 .timeline-content h3 {
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 600;
     color: var(--text);
-    margin-bottom: 3px;
+    margin-bottom: 4px;
 }
 
 .timeline-role {
-    font-size: 13px;
+    font-size: 15px;
     color: var(--text-secondary);
     font-style: italic;
-    margin-bottom: 8px;
+    line-height: 1.2;
+    margin-bottom: 5px;
 }
 
-.timeline-content p:not(.timeline-role) {
+.timeline-meta {
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.2;
+    margin-bottom: 0;
+}
+
+.timeline-content p:not(.timeline-role):not(.timeline-meta) {
     font-size: 14px;
     color: var(--text-secondary);
     line-height: 1.75;
@@ -1125,23 +1146,39 @@ app-sidebar {
 }
 
 /* ===========================================
-   PROJECT LOGO PLACEHOLDERS
+   PROJECT INFO BAR
    =========================================== */
-.project-logos {
-    display: flex;
-    gap: 14px;
-    margin-bottom: 28px;
-}
-
-.project-logo-card {
-    flex: 1;
+.project-info-bar {
     display: flex;
     align-items: center;
-    gap: 14px;
-    padding: 14px 18px;
+    gap: 0;
+    margin-bottom: 28px;
     background: var(--card-bg);
     border: 1px solid var(--border);
     border-radius: var(--radius);
+    padding: 0 4px;
+}
+
+.project-info-bar-divider {
+    width: 1px;
+    height: 36px;
+    background: var(--border);
+    flex-shrink: 0;
+    margin: 0 8px;
+}
+
+.project-info-bar .project-meta-item {
+    padding: 14px 18px;
+    border: none;
+    background: none;
+}
+
+.project-logo-card {
+    flex: none;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 18px;
 }
 
 .project-logo-slot {
@@ -1149,8 +1186,6 @@ app-sidebar {
     width: 52px;
     height: 52px;
     border-radius: 8px;
-    border: 1.5px dashed rgba(88, 166, 255, 0.25);
-    background: var(--bg-secondary);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1590,9 +1625,10 @@ app-sidebar {
         flex-direction: column;
     }
 
-    .about-image {
+    .about-image-frame {
         width: 100%;
-        height: 200px;
+        height: auto;
+        aspect-ratio: 1 / 1;
     }
 
     .projects-grid {
