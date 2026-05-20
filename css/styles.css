@@ -124,9 +124,14 @@ a {
    SIDEBAR
    =========================================== */
 
-/* Make the custom element transparent to the flex layout */
+/* Reserve sidebar space before web component renders */
 app-sidebar {
-    display: contents;
+    display: block;
+    width: var(--sidebar-width);
+    flex-shrink: 0;
+    min-height: 100vh;
+    background: var(--sidebar-bg);
+    border-right: 1px solid var(--border);
 }
 
 .sidebar {
@@ -551,7 +556,7 @@ app-sidebar {
    =========================================== */
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
 }
 
@@ -573,20 +578,31 @@ app-sidebar {
 
 .project-image-wrap {
     position: relative;
-    height: 185px;
+    aspect-ratio: 4 / 3;
     overflow: hidden;
     background: var(--bg-secondary);
+}
+
+.project-image-wrap::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 40%;
+    background: linear-gradient(to bottom, transparent, var(--card-bg));
+    pointer-events: none;
 }
 
 .project-image-wrap img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.35s ease;
+    transition: filter 0.35s ease;
 }
 
 .project-card:hover .project-image-wrap img {
-    transform: scale(1.05);
+    filter: blur(3px);
 }
 
 .project-overlay {
@@ -616,6 +632,36 @@ app-sidebar {
 
 .project-info {
     padding: 16px 18px 18px;
+    position: relative;
+    z-index: 2;
+    margin-top: -12px;
+    background: var(--card-bg);
+    border-radius: 0 0 10px 10px;
+}
+
+.project-title-row {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.project-poster-btn {
+    flex-shrink: 0;
+    background: none;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    color: var(--text-secondary);
+    cursor: pointer;
+    font-size: 13px;
+    padding: 2px 6px;
+    line-height: 1;
+    transition: color var(--transition), border-color var(--transition);
+}
+
+.project-poster-btn:hover {
+    color: var(--accent);
+    border-color: var(--accent);
 }
 
 .project-info h3 {
@@ -890,18 +936,32 @@ app-sidebar {
 }
 
 .project-body h3 {
+    --section-title-gap: 12px; /* ← space between blue line and paragraph text */
     font-size: 17px;
     font-weight: 600;
     color: var(--text);
-    margin: 30px 0 12px;
+    margin: 30px 0 var(--section-title-gap);
+    padding-bottom: 8px;
+    position: relative;
 }
 
-.project-body h3:first-child {
+.project-body h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(to right, var(--accent) 0%, transparent 52%);
+}
+
+.project-body h3:first-child,
+.project-split__text h3:first-child {
     margin-top: 0;
 }
 
 .project-body p {
-    font-size: 14.5px;
+    font-size: 15px;
     color: var(--text-secondary);
     line-height: 1.8;
     margin-bottom: 14px;
@@ -913,7 +973,7 @@ app-sidebar {
 }
 
 .project-body ul li {
-    font-size: 14.5px;
+    font-size: 15px;
     color: var(--text-secondary);
     line-height: 1.75;
     margin-bottom: 6px;
@@ -1028,6 +1088,63 @@ app-sidebar {
 }
 
 /* ===========================================
+   PROJECT SPLIT LAYOUT (text + figure side by side)
+   =========================================== */
+.project-split {
+    display: grid;
+    gap: 36px;
+    align-items: start;
+    margin: 4px 0 32px;
+}
+
+.project-split--img-right {
+    grid-template-columns: 1fr 42%;
+}
+
+.project-split--img-left {
+    grid-template-columns: 42% 1fr;
+}
+
+.project-split__text > p {
+    font-size: 15px;
+    color: var(--text-secondary);
+    line-height: 1.8;
+    margin-bottom: 14px;
+}
+
+.project-split .project-figure {
+    margin: 0;
+}
+
+.project-split .project-figure img {
+    --team-photo-height: 350px;    /* ← adjust height here */
+    --team-photo-position: 50% 50%; /* ← pan crop: "top", "bottom", "center", or "50% 30%" */
+    width: 100%;
+    height: var(--team-photo-height);
+    object-fit: cover;
+    object-position: var(--team-photo-position);
+}
+
+/* Constrained height for wide/horizontal renders */
+.project-figure--wide img {
+    max-height: 240px;
+    object-fit: contain;
+}
+
+@media (max-width: 780px) {
+    .project-split--img-right,
+    .project-split--img-left {
+        grid-template-columns: 1fr;
+    }
+
+    .project-split .project-figure {
+        position: static;
+    }
+
+
+}
+
+/* ===========================================
    HERO CAROUSEL
    =========================================== */
 .hero-carousel {
@@ -1049,12 +1166,16 @@ app-sidebar {
 }
 
 .hero-carousel-slide {
+    --carousel-img-offset: -7px; /* ← shift images up (more negative = higher) */
     flex: 0 0 100%;
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    padding-bottom: calc(var(--carousel-img-offset) * -1);
+    padding-top: 0;
+    transform: translateY(var(--carousel-img-offset));
 }
 
 .hero-carousel-slide img {
@@ -1127,22 +1248,21 @@ app-sidebar {
 
 /* Caption bar */
 .carousel-caption {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    padding: 10px 20px 34px;
-    background: linear-gradient(to top, rgba(13,17,23,0.82) 0%, transparent 100%);
-    font-size: 12px;
-    color: var(--text-muted);
-    font-style: italic;
-    text-align: center;
-    pointer-events: none;
-    transition: opacity 0.15s ease;
+    display: none;
 }
 
 .carousel-caption.fading {
     opacity: 0;
+}
+
+/* ===========================================
+   SECTION CAROUSEL (frame / hopper / shaft)
+   =========================================== */
+.hero-carousel--section {
+    --section-carousel-height: 380px; /* ← adjust section carousel height here */
+    height: var(--section-carousel-height);
+    margin-bottom: 0;
+    cursor: pointer;
 }
 
 /* ===========================================
@@ -1313,12 +1433,14 @@ app-sidebar {
 }
 
 .img-modal-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 14px 20px;
-    border-bottom: 1px solid var(--border);
-    flex-shrink: 0;
+    display: none;
+}
+
+.img-modal-close {
+    position: absolute;
+    top: 12px;
+    right: 14px;
+    z-index: 10;
 }
 
 .img-modal-header-left {

@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automated Precision Seed Dispensing System | Anthony Radke</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/styles.css">
+    <script src="../../js/sidebar.js"></script>
+</head>
+<body>
+
+    <!-- MOBILE HEADER -->
+    <div class="mobile-header">
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
+        <span class="mobile-name">Anthony Radke</span>
+    </div>
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <div class="app-shell">
+
+        <!-- ========== SIDEBAR ========== -->
+        <app-sidebar></app-sidebar>
+
+        <!-- ========== MAIN CONTENT ========== -->
+        <main class="main-content">
+            <div class="page-section active">
+
+                <a href="../../index.html#projects" class="back-link">← Back to Projects</a>
+
+                <h2>Automated Precision Seed Dispensing System</h2>
+
+                <!-- PROJECT INFO BAR -->
+                <div class="project-info-bar">
+                    <div class="project-logo-card">
+                        <div class="project-logo-slot">
+                            <img src="../../images/cu-logo.png" alt="CU Boulder, Design Center Colorado" style="width:78%;height:78%">
+                        </div>
+                        <div class="project-logo-meta">
+                            <span class="project-logo-label">Program</span>
+                            <span class="project-logo-org">CU Boulder, Design Center Colorado</span>
+                        </div>
+                    </div>
+                    <div class="project-logo-card">
+                        <div class="project-logo-slot">
+                            <img src="../../images/rooted-logo.png" alt="Rooted Robotics">
+                        </div>
+                        <div class="project-logo-meta">
+                            <span class="project-logo-label">Client</span>
+                            <span class="project-logo-org">Rooted Robotics</span>
+                        </div>
+                    </div>
+                    <div class="project-info-bar-divider"></div>
+                    <div class="project-meta-item">
+                        <span class="project-meta-label">Role</span>
+                        <span class="project-meta-value">CAD Engineer</span>
+                    </div>
+                    <div class="project-meta-item">
+                        <span class="project-meta-label">Year</span>
+                        <span class="project-meta-value">2025 – 2026</span>
+                    </div>
+                    <div class="project-meta-item">
+                        <span class="project-meta-label">Team Size</span>
+                        <span class="project-meta-value">8 Engineers</span>
+                    </div>
+                    <div class="project-meta-item">
+                        <span class="project-meta-label">Budget</span>
+                        <span class="project-meta-value">$5,000</span>
+                    </div>
+                </div>
+
+                <!-- HERO CAROUSEL -->
+                <div class="hero-carousel" id="heroCarousel">
+                    <div class="hero-carousel-track" id="heroTrack">
+                        <div class="hero-carousel-slide" data-caption="Full assembly — View 1">
+                            <img src="../../images/projects/seeder/carousel1.png" alt="Full assembly view 1" data-img-title="Assembly View 1">
+                        </div>
+                        <div class="hero-carousel-slide" data-caption="Full assembly — View 2">
+                            <img src="../../images/projects/seeder/carousel2.png" alt="Full assembly view 2" data-img-title="Assembly View 2">
+                        </div>
+                        <div class="hero-carousel-slide" data-caption="Full assembly — View 3">
+                            <img src="../../images/projects/seeder/carousel3.png" alt="Full assembly view 3" data-img-title="Assembly View 3">
+                        </div>
+                        <div class="hero-carousel-slide" data-caption="Full assembly — View 4">
+                            <img src="../../images/projects/seeder/carousel4.png" alt="Full assembly view 4" data-img-title="Assembly View 4">
+                        </div>
+                        <div class="hero-carousel-slide" data-caption="Full assembly — View 5">
+                            <img src="../../images/projects/seeder/carousel5.png" alt="Full assembly view 5" data-img-title="Assembly View 5">
+                        </div>
+                    </div>
+
+                    <button class="carousel-btn carousel-btn-prev" id="carouselPrev" aria-label="Previous image">&#8249;</button>
+                    <button class="carousel-btn carousel-btn-next" id="carouselNext" aria-label="Next image">&#8250;</button>
+
+                    <div class="carousel-dots" id="carouselDots"></div>
+                    <div class="carousel-caption" id="carouselCaption"></div>
+                </div>
+
+
+                <div class="skill-tags">
+                    <span class="skill-tag">SolidWorks</span>
+                    <span class="skill-tag">SolidWorks Visualize</span>
+                    <span class="skill-tag">Sheet Metal Design</span>
+                    <span class="skill-tag">GD&amp;T</span>
+                    <span class="skill-tag">Mechanical Assembly</span>
+                    <span class="skill-tag">DFM</span>
+                    <span class="skill-tag">Tolerance Analysis</span>
+                    <span class="skill-tag">Rapid Prototyping</span>
+                </div>
+
+                <div class="project-body">
+
+                    <h3>Overview</h3>
+                    <p>
+                        Rooted Robotics builds compact automation tools for small-scale indoor farms. Their existing
+                        microgreens seeder couldn't handle crops like lettuce, basil, or tree seedlings. Those require
+                        a single seed placed precisely in the center of each soil cell. Our team of eight engineers
+                        designed, built, and delivered a fully modular precision seeding system that integrates with
+                        Rooted Robotics' existing conveyor infrastructure and targets a bill of materials under $5,000.
+                    </p>
+                    <p>
+                        The system uses a motor-driven rotating shaft fitted with an interchangeable resin-printed sleeve.
+                        Seeds load from the hopper into individual pockets in the resin-printed sleeve, and as the
+                        sleeve rotates, each pocket drops a single seed into one cell of the tray below until every
+                        cell is filled.
+                    </p>
+
+                    <!-- STAT ROW -->
+                    <div class="project-stat-row">
+                        <div class="project-stat">
+                            <div class="project-stat-value">95%</div>
+                            <div class="project-stat-label">Seeding Accuracy</div>
+                        </div>
+                        <div class="project-stat">
+                            <div class="project-stat-value">$4,700</div>
+                            <div class="project-stat-label">Total Build Cost</div>
+                        </div>
+                        <div class="project-stat">
+                            <div class="project-stat-value">3–10s</div>
+                            <div class="project-stat-label">Per-Tray Cycle Time</div>
+                        </div>
+                        <div class="project-stat">
+                            <div class="project-stat-value">10,000+</div>
+                            <div class="project-stat-label">Seed Capacity</div>
+                        </div>
+                    </div>
+
+                    <h3>My Role</h3>
+                    <div class="project-split project-split--img-right">
+                        <div class="project-split__text">
+                            <p>
+                                I served as the team's CAD engineer, responsible for the majority of the mechanical design
+                                from individual parts through complete assemblies and the final drawing package. This included
+                                the rotating shaft assembly, sliding hopper, and sheet metal frame. Every part was modeled
+                                in SolidWorks, with tolerances and manufacturing method considered at each step to keep the
+                                design producible within our budget and timeline.
+                            </p>
+                            <p>
+                                An indirect but significant part of my role was managing the CAD environment itself:
+                                maintaining version control, tracking revisions, keeping file naming and drawing formatting
+                                consistent, and structuring assemblies so that mates could be edited and parts swapped
+                                without breaking the model. Keeping everything clean and modifiable became especially
+                                important as the design iterated through multiple revisions across two semesters.
+                            </p>
+                            <p>
+                                Beyond CAD, I participated in the physical build and was part of a significant portion of
+                                testing: brush interface selection, sleeve geometry iteration, full-system seeding runs,
+                                and timed cycle tests.
+                            </p>
+                        </div>
+                        <figure class="project-figure">
+                            <img src="../../images/projects/seeder/teamphoto.png" alt="Team photo" style="object-fit: cover;">
+                            <figcaption style="text-align: center;">Senior Capstone Team Photo</figcaption>
+                        </figure>
+                    </div>
+
+                    <h3>Sheet Metal Frame</h3>
+                    <div class="project-split project-split--img-right">
+                        <div class="project-split__text">
+                            <p>
+                                The structural backbone is four bent sheet-metal panels laser-cut from 3/16" 5052 aluminum,
+                                outsourced to OshCut. 5052 is highly corrosion resistant, making it well suited for a
+                                humid greenhouse environment. I designed each panel in SolidWorks using sheet metal features,
+                                with the goal of making them complex enough to consolidate parts and reduce overall part count,
+                                while keeping them simple enough to remain manufacturable as flat laser-cut blanks with
+                                straightforward bends.
+                            </p>
+                            <p>
+                                The front panel carries all operator-facing controls (Grayhill touch encoder and e-stop).
+                                A dedicated motor mounting plate between the front and rear panels positions the Teknic NEMA 34
+                                servo motor using a precision-machined bore that the motor presses directly into, providing
+                                accurate and repeatable alignment. Triangular cutouts reduce panel mass while providing wiring
+                                access. The frame assembly bolts directly to Rooted Robotics' existing conveyor, so customers
+                                can purchase the seeder and mount it to their system without any additional hardware.
+                            </p>
+                        </div>
+                        <div class="hero-carousel hero-carousel--section" id="frameCarousel">
+                            <div class="hero-carousel-track" id="frameTrack">
+                                <div class="hero-carousel-slide" data-caption="Frame Assembly View"><img src="../../images/projects/seeder/frame1.png" alt="Frame view 1"></div>
+                                <div class="hero-carousel-slide" data-caption="Front Panel"><img src="../../images/projects/seeder/frame2.png" alt="Frame view 2"></div>
+                                <div class="hero-carousel-slide" data-caption="Back Panel"><img src="../../images/projects/seeder/frame3.png" alt="Frame view 3"></div>
+                                <div class="hero-carousel-slide" data-caption="Motor Mount"><img src="../../images/projects/seeder/frame4.png" alt="Frame view 4"></div>
+                                <div class="hero-carousel-slide" data-caption="User Control Panel"><img src="../../images/projects/seeder/frame5.png" alt="Frame view 5"></div>
+                            </div>
+                            <button class="carousel-btn carousel-btn-prev" id="framePrev" aria-label="Previous">&#8249;</button>
+                            <button class="carousel-btn carousel-btn-next" id="frameNext" aria-label="Next">&#8250;</button>
+                            <div class="carousel-dots" id="frameDots"></div>
+                            <div class="carousel-caption" id="frameCaption"></div>
+                        </div>
+                    </div>
+
+                    <h3>Sliding Hopper</h3>
+                    <div class="project-split project-split--img-right">
+                        <div class="project-split__text">
+                            <p>
+                                A fully removable hopper wasn't feasible because we provisioned for a vibration motor mounted
+                                directly to the hopper to agitate seeds if needed, which required a fixed electrical connection.
+                                Instead, I designed a sliding hopper that still lets operators swap seed types and clean quickly.
+                                The hopper is rigidly mounted to two sliding carriages from Item24 that ride in T-slots of
+                                40×40mm aluminum extrusion rails. The operator loosens a single cam-lock clamp, slides the
+                                hopper to the far left over a collection bucket, then slides it back until it contacts
+                                integrated hard stops. One motion, fully repeatable positioning, no lifting required.
+                            </p>
+                            <p>
+                                The two hopper panels are cut from 1/8" 5052 aluminum. Mounting flaps are integrated directly
+                                into the sheet metal geometry, eliminating separate brackets. A laser-cut polycarbonate window
+                                on the front panel lets operators monitor seed level without disturbing the hopper. The lower
+                                edge uses a strip brush interface at the top of the sleeve to prevent seeds from crushing
+                                against the hard metal edge of the hopper and to prevent double seeding, ensuring only one
+                                seed loads into each pocket.
+                            </p>
+                        </div>
+                        <div class="hero-carousel hero-carousel--section" id="hopperCarousel">
+                            <div class="hero-carousel-track" id="hopperTrack">
+                                <div class="hero-carousel-slide" data-caption="Placeholder hopper caption 1."><img src="../../images/projects/seeder/hopper1.png" alt="Hopper view 1"></div>
+                                <div class="hero-carousel-slide" data-caption="Placeholder hopper caption 2."><img src="../../images/projects/seeder/hopper2.png" alt="Hopper view 2"></div>
+                                <div class="hero-carousel-slide" data-caption="Placeholder hopper caption 3."><img src="../../images/projects/seeder/hopper3.png" alt="Hopper view 3"></div>
+                                <div class="hero-carousel-slide" data-caption="Placeholder hopper caption 4."><img src="../../images/projects/seeder/hopper4.png" alt="Hopper view 4"></div>
+                                <div class="hero-carousel-slide" data-caption="Placeholder hopper caption 5."><img src="../../images/projects/seeder/hopper5.png" alt="Hopper view 5"></div>
+                            </div>
+                            <button class="carousel-btn carousel-btn-prev" id="hopperPrev" aria-label="Previous">&#8249;</button>
+                            <button class="carousel-btn carousel-btn-next" id="hopperNext" aria-label="Next">&#8250;</button>
+                            <div class="carousel-dots" id="hopperDots"></div>
+                            <div class="carousel-caption" id="hopperCaption"></div>
+                        </div>
+                    </div>
+
+                    <h3>Rotating Shaft Assembly</h3>
+                    <p>
+                        The shaft assembly is the precision core of the system. It consists of a 20mm 304 stainless-steel
+                        keyed shaft sourced from McMaster-Carr, a resin-printed interchangeable sleeve, two oil-embedded
+                        bronze sleeve bearings mounted on aluminum pillow blocks, a spider coupling connecting the NEMA 34 motor,
+                        and a dual-collar axial constraint system.
+                    </p>
+                    <p>
+                        The sleeve is printed on a resin printer at Rooted Robotics' facility at 100% infill to prevent
+                        cracking. Each sleeve contains six circumferential rows of slots, one row per tray cell row,
+                        that capture a single seed and release it as the slot passes the bottom of its rotation arc.
+                        Sleeves are interchangeable for different tray configurations (5 to 13 cells per row) and seed
+                        sizes (3–7mm diameter). On the left, a two-piece clamping collar sets the axial home position.
+                        On the right, a quick-release collar enables tool-free sleeve swaps in seconds. The right-side
+                        bearing block is secured with wing nuts so it can be lifted away to free the sleeve without
+                        any tools.
+                    </p>
+                    <p>
+                        The mounting blocks for both bearings are machined from 6061 aluminum bar stock. I designed
+                        the block geometry for simplicity: bandsaw and end mill operations only, while holding the
+                        shaft elevation and alignment relative to the hopper outlet.
+                    </p>
+
+                    <div class="hero-carousel hero-carousel--section" id="shaftCarousel">
+                        <div class="hero-carousel-track" id="shaftTrack">
+                            <div class="hero-carousel-slide" data-caption="Placeholder shaft caption 1."><img src="../../images/projects/seeder/shaft1.png" alt="Shaft assembly view 1"></div>
+                            <div class="hero-carousel-slide" data-caption="Placeholder shaft caption 2."><img src="../../images/projects/seeder/shaft2.png" alt="Shaft assembly view 2"></div>
+                            <div class="hero-carousel-slide" data-caption="Placeholder shaft caption 3."><img src="../../images/projects/seeder/shaft3.png" alt="Shaft assembly view 3"></div>
+                            <div class="hero-carousel-slide" data-caption="Placeholder shaft caption 4."><img src="../../images/projects/seeder/shaft4.png" alt="Shaft assembly view 4"></div>
+                        </div>
+                        <button class="carousel-btn carousel-btn-prev" id="shaftPrev" aria-label="Previous">&#8249;</button>
+                        <button class="carousel-btn carousel-btn-next" id="shaftNext" aria-label="Next">&#8250;</button>
+                        <div class="carousel-dots" id="shaftDots"></div>
+                        <div class="carousel-caption" id="shaftCaption"></div>
+                    </div>
+
+                    <h3>Testing &amp; Results</h3>
+                    <p>
+                        Testing spanned several phases over two semesters. Early prototyping used PLA sleeves and
+                        manual shaft rotation to isolate the seed-crushing problem at the hopper-sleeve interface.
+                        That work drove the switch to a modified hopper geometry and the strip brush solution.
+                    </p>
+                    <p>
+                        I was directly involved in three major test campaigns:
+                    </p>
+                    <ul>
+                        <li><strong>Brush selection:</strong> Tested brushes of varying bristle length, stiffness,
+                            and filament material. Evaluated seed preservation, frictional drag on the shaft, and
+                            single-seed slot-loading consistency. Final design uses two short, thin brushes in a
+                            single holder, mounted perpendicular to the sleeve inside the hopper.</li>
+                        <li><strong>Sleeve geometry iteration:</strong> Evaluated 8 slot profiles (teardrop, pyramid,
+                            cylinder, obround, bulb, D-shape, large cone, small cone) using slow-motion camera
+                            analysis of seed release. Bulb, teardrop, and pyramid were eliminated for double seeding.
+                            The large cone geometry achieved the most consistent single-seed loading and uniform
+                            release timing, and was selected for production.</li>
+                        <li><strong>Full system seeding and timing runs:</strong> Rather than dialing in one tray
+                            configuration, we developed a systematic method for programming motor velocities to
+                            accommodate different tray sizes. This gave the machine a repeatable process for scaling
+                            to new configurations without starting from scratch each time.</li>
+                    </ul>
+                    <p>
+                        The system achieved <strong>95% seeding accuracy</strong>, completing a full tray in the
+                        3–10 second window specified by the client. The final build came in at $4,692.57, within
+                        the $5,000 budget.
+                    </p>
+                    <p>
+                        To confirm the machine wasn't damaging seeds, we ran a germination comparison in controlled
+                        greenhouse conditions, planting one tray by hand and one by machine with all other variables
+                        held constant. The hand-planted tray germinated 67 seeds; the machine-planted tray germinated
+                        64, a 95.5% germination rate relative to hand planting, meeting our requirement.
+                    </p>
+
+                    <h3>What I Learned</h3>
+                    <p>
+                        This project sharpened my ability to design for manufacturability under real constraints.
+                        Every sheet metal part had to be confirmed manufacturable with OshCut before ordering, and
+                        iterating on the hopper geometry to solve the seed-crushing problem taught me how much a
+                        single interface can change a design's entire architecture.
+                    </p>
+                    <p>
+                        Working across every level of the design, from individual fasteners to the complete assembly, also gave
+                        me a much deeper appreciation for tolerance stack-ups. Small positional errors in the shaft
+                        relative to the hopper outlet had an outsized effect on seeding accuracy, and managing that
+                        through the mounting block geometry was one of the most demanding parts of the design.
+                    </p>
+                    <p>
+                        Building and testing the physical machine alongside the CAD work closed the loop in a way
+                        that pure design work doesn't. Watching a sleeve geometry that looked right on screen fail
+                        to load seeds consistently, then iterating back to CAD to adjust the profile, was the most
+                        valuable engineering feedback cycle I've experienced.
+                    </p>
+
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <!-- ========== PDF MODAL (certs only) ========== -->
+    <div class="pdf-modal" id="pdfModal" role="dialog" aria-modal="true">
+        <div class="pdf-modal-inner">
+            <div class="pdf-modal-header">
+                <span class="pdf-modal-title" id="pdfModalTitle"></span>
+                <button class="pdf-modal-close" id="pdfModalClose" aria-label="Close modal">&times;</button>
+            </div>
+            <div class="pdf-modal-body">
+                <img class="cert-img" id="certImg" alt="Certification">
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== IMAGE MODAL ========== -->
+    <div class="img-modal" id="imgModal" role="dialog" aria-modal="true">
+        <div class="img-modal-inner">
+            <div class="img-modal-header">
+                <div class="img-modal-header-left">
+                    <span class="img-modal-title" id="imgModalTitle"></span>
+                    <span class="img-modal-counter" id="imgModalCounter"></span>
+                </div>
+                <button class="img-modal-close" id="imgModalClose" aria-label="Close">&times;</button>
+            </div>
+            <div class="img-modal-carousel">
+                <div class="img-modal-track" id="imgModalTrack"></div>
+                <button class="carousel-btn carousel-btn-prev" id="imgModalPrev" aria-label="Previous image">&#8249;</button>
+                <button class="carousel-btn carousel-btn-next" id="imgModalNext" aria-label="Next image">&#8250;</button>
+            </div>
+            <div class="img-modal-footer">
+                <div class="img-modal-caption" id="imgModalCaption"></div>
+                <div class="img-modal-dots" id="imgModalDots"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../js/main.js"></script>
+    <script>
+    // ── Image modal ────────────────────────────────────────────────────────
+    const imgModal        = document.getElementById('imgModal');
+    const imgModalTrack   = document.getElementById('imgModalTrack');
+    const imgModalTitle   = document.getElementById('imgModalTitle');
+    const imgModalCounter = document.getElementById('imgModalCounter');
+    const imgModalCaption = document.getElementById('imgModalCaption');
+    const imgModalDots    = document.getElementById('imgModalDots');
+
+    let modalImgs    = [];
+    let modalCurrent = 0;
+    let modalDots    = [];
+
+    function buildModal(imgs) {
+        imgModalTrack.innerHTML  = '';
+        imgModalDots.innerHTML   = '';
+        imgModalTrack.style.transition = 'none';
+        imgModalTrack.style.transform  = 'translateX(0)';
+        modalImgs = imgs;
+        modalDots = imgs.map((item, i) => {
+            const slide = document.createElement('div');
+            slide.className = 'img-modal-slide';
+            const img = document.createElement('img');
+            img.src = item.src; img.alt = item.title;
+            slide.appendChild(img);
+            imgModalTrack.appendChild(slide);
+
+            const dot = document.createElement('button');
+            dot.className = 'carousel-dot';
+            dot.setAttribute('aria-label', 'View ' + item.title);
+            dot.addEventListener('click', () => modalGoTo(i));
+            imgModalDots.appendChild(dot);
+            return dot;
+        });
+    }
+
+    function modalGoTo(index, instant) {
+        const prev = modalCurrent;
+        modalCurrent = (index + modalImgs.length) % modalImgs.length;
+        if (instant) { imgModalTrack.style.transition = 'none'; void imgModalTrack.offsetWidth; }
+        else           imgModalTrack.style.transition = '';
+        imgModalTrack.style.transform = `translateX(-${modalCurrent * 100}%)`;
+        modalDots.forEach((d, i) => d.classList.toggle('active', i === modalCurrent));
+        imgModalTitle.textContent   = modalImgs[modalCurrent].title;
+        imgModalCounter.textContent = `${modalCurrent + 1} / ${modalImgs.length}`;
+        if (instant || prev === modalCurrent) {
+            imgModalCaption.textContent = modalImgs[modalCurrent].caption;
+        } else {
+            imgModalCaption.classList.add('fading');
+            setTimeout(() => { imgModalCaption.textContent = modalImgs[modalCurrent].caption; imgModalCaption.classList.remove('fading'); }, 150);
+        }
+    }
+
+    function openImgModal(imgs, index) {
+        buildModal(imgs);
+        imgModal.classList.add('active');
+        modalGoTo(index, true);
+    }
+
+    function closeImgModal() {
+        imgModal.classList.add('closing');
+        setTimeout(() => imgModal.classList.remove('active', 'closing'), 220);
+    }
+
+    document.getElementById('imgModalClose').addEventListener('click', closeImgModal);
+    document.getElementById('imgModalPrev').addEventListener('click', () => modalGoTo(modalCurrent - 1));
+    document.getElementById('imgModalNext').addEventListener('click', () => modalGoTo(modalCurrent + 1));
+    imgModal.addEventListener('click', e => { if (e.target === imgModal) closeImgModal(); });
+    document.addEventListener('keydown', e => {
+        if (!imgModal.classList.contains('active')) return;
+        if (e.key === 'Escape')     closeImgModal();
+        if (e.key === 'ArrowLeft')  modalGoTo(modalCurrent - 1);
+        if (e.key === 'ArrowRight') modalGoTo(modalCurrent + 1);
+    });
+
+    // ── Unified carousel init (seamless loop, auto-advance, hover, touch, modal) ──
+    function initCarousel(carouselId, trackId, prevId, nextId, dotsId, captionId, imgs) {
+        const carouselEl = document.getElementById(carouselId);
+        const track      = document.getElementById(trackId);
+        const dotsWrap   = document.getElementById(dotsId);
+        const captionEl  = document.getElementById(captionId);
+        const origSlides = Array.from(track.querySelectorAll('.hero-carousel-slide'));
+        const total      = origSlides.length;
+
+        // Seamless clone wrap
+        track.insertBefore(origSlides[total - 1].cloneNode(true), origSlides[0]);
+        track.appendChild(origSlides[0].cloneNode(true));
+
+        let ci          = 1;
+        let realCurrent = 0;
+        let autoTimer   = null;
+
+        function clonedToReal(c) {
+            if (c === 0)         return total - 1;
+            if (c === total + 1) return 0;
+            return c - 1;
+        }
+
+        function moveTo(newCi, instant) {
+            if (instant) { track.style.transition = 'none'; void track.offsetWidth; }
+            else           track.style.transition = '';
+            track.style.transform = `translateX(-${newCi * 100}%)`;
+            ci = newCi;
+            realCurrent = clonedToReal(ci);
+            dots.forEach((d, i) => d.classList.toggle('active', i === realCurrent));
+            if (!instant) {
+                captionEl.classList.add('fading');
+                setTimeout(() => { captionEl.textContent = origSlides[realCurrent].dataset.caption || ''; captionEl.classList.remove('fading'); }, 150);
+            }
+        }
+
+        const dots = origSlides.map((_, i) => {
+            const d = document.createElement('button');
+            d.className = 'carousel-dot';
+            d.setAttribute('aria-label', 'Go to slide ' + (i + 1));
+            d.addEventListener('click', () => { moveTo(i + 1, false); resetAuto(); });
+            dotsWrap.appendChild(d);
+            return d;
+        });
+
+        function resetAuto() {
+            clearInterval(autoTimer);
+            autoTimer = setInterval(() => moveTo(ci + 1, false), 4500);
+        }
+
+        track.addEventListener('transitionend', () => {
+            if (ci === 0)          moveTo(total,     true);
+            else if (ci === total + 1) moveTo(1, true);
+        });
+
+        document.getElementById(prevId).addEventListener('click', () => { moveTo(ci - 1, false); resetAuto(); });
+        document.getElementById(nextId).addEventListener('click', () => { moveTo(ci + 1, false); resetAuto(); });
+
+        carouselEl.addEventListener('click', e => {
+            if (e.target.closest('.carousel-btn') || e.target.closest('.carousel-dots')) return;
+            openImgModal(imgs, realCurrent);
+        });
+
+        carouselEl.addEventListener('mouseenter', () => clearInterval(autoTimer));
+        carouselEl.addEventListener('mouseleave',  resetAuto);
+
+        let tx = 0;
+        carouselEl.addEventListener('touchstart', e => { tx = e.touches[0].clientX; }, { passive: true });
+        carouselEl.addEventListener('touchend',   e => {
+            const dx = e.changedTouches[0].clientX - tx;
+            if (Math.abs(dx) > 40) { moveTo(ci + (dx < 0 ? 1 : -1), false); resetAuto(); }
+        });
+
+        moveTo(1, true);
+        captionEl.textContent = origSlides[0].dataset.caption || '';
+        resetAuto();
+    }
+
+    // ── Carousel instances ─────────────────────────────────────────────────
+    const HERO_IMGS = [
+        { src: '../../images/projects/seeder/carousel1.png', title: 'Assembly View 1', caption: 'Full Assembly — View 1' },
+        { src: '../../images/projects/seeder/carousel2.png', title: 'Assembly View 2', caption: 'Full Assembly — View 2' },
+        { src: '../../images/projects/seeder/carousel3.png', title: 'Assembly View 3', caption: 'Full Assembly — View 3' },
+        { src: '../../images/projects/seeder/carousel4.png', title: 'Assembly View 4', caption: 'Full Assembly — View 4' },
+        { src: '../../images/projects/seeder/carousel5.png', title: 'Assembly View 5', caption: 'Full Assembly — View 5' },
+    ];
+    const FRAME_IMGS = [
+        { src: '../../images/projects/seeder/frame1.png', title: 'Frame View 1', caption: 'Frame Subassembly View' },
+        { src: '../../images/projects/seeder/frame2.png', title: 'Frame View 2', caption: 'Front Panel' },
+        { src: '../../images/projects/seeder/frame3.png', title: 'Frame View 3', caption: 'Back Panel' },
+        { src: '../../images/projects/seeder/frame4.png', title: 'Frame View 4', caption: 'Motor Mount' },
+        { src: '../../images/projects/seeder/frame5.png', title: 'Frame View 5', caption: 'User Control Panel' },
+    ];
+    const HOPPER_IMGS = [
+        { src: '../../images/projects/seeder/hopper1.png', title: 'Hopper View 1', caption: 'Hopper Subassembly View' },
+        { src: '../../images/projects/seeder/hopper2.png', title: 'Hopper View 2', caption: 'Sliding Carriage' },
+        { src: '../../images/projects/seeder/hopper3.png', title: 'Hopper View 3', caption: 'Mounted Sliding Hopper' },
+        { src: '../../images/projects/seeder/hopper4.png', title: 'Hopper View 4', caption: 'Hopper Section View' },
+        { src: '../../images/projects/seeder/hopper5.png', title: 'Hopper View 5', caption: 'Hopper/Shaft Brush Interface' },
+    ];
+    const SHAFT_IMGS = [
+        { src: '../../images/projects/seeder/shaft1.png', title: 'Shaft View 1', caption: 'Rotating Shaft Subassembly View 1' },
+        { src: '../../images/projects/seeder/shaft2.png', title: 'Shaft View 2', caption: 'Rotating Shaft Subassembly View 2' },
+        { src: '../../images/projects/seeder/shaft3.png', title: 'Shaft View 3', caption: 'Rotating Shaft Subassembly View 3' },
+        { src: '../../images/projects/seeder/shaft4.png', title: 'Shaft View 4', caption: 'Interchangeable Sleeve' },
+    ];
+
+    initCarousel('heroCarousel',   'heroTrack',   'carouselPrev', 'carouselNext', 'carouselDots', 'carouselCaption', HERO_IMGS);
+    initCarousel('frameCarousel',  'frameTrack',  'framePrev',    'frameNext',    'frameDots',    'frameCaption',    FRAME_IMGS);
+    initCarousel('hopperCarousel', 'hopperTrack', 'hopperPrev',   'hopperNext',   'hopperDots',   'hopperCaption',   HOPPER_IMGS);
+    initCarousel('shaftCarousel',  'shaftTrack',  'shaftPrev',    'shaftNext',    'shaftDots',    'shaftCaption',    SHAFT_IMGS);
+
+    // ── Scroll reveal ──────────────────────────────────────────────────────
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('revealed');
+                revealObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.08 });
+
+    document.querySelectorAll(
+        '.project-body h3, .project-body p, .project-body ul, .project-figure, .project-figure-grid, .project-split, .hero-carousel--section'
+    ).forEach(el => {
+        el.classList.add('scroll-reveal');
+        revealObserver.observe(el);
+    });
+
+    // ── Stat card staggered entrance ───────────────────────────────────────
+    const statObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.querySelectorAll('.project-stat').forEach((stat, i) => {
+                    setTimeout(() => stat.classList.add('stat-visible'), i * 90);
+                });
+                statObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.2 });
+
+    document.querySelectorAll('.project-stat-row').forEach(row => statObserver.observe(row));
+    </script>
+</body>
+</html>
