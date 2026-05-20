@@ -12,10 +12,11 @@ class AppSidebar extends HTMLElement {
 
         // Nav differs by context: project pages link back to index;
         // index.html uses data-section for JS-driven switching.
+        const root = window.location.origin + '/';
         const nav = isProjectPage
-            ? `<a href="${base}#about"    class="nav-item">About</a>
-               <a href="${base}#projects" class="nav-item active">Projects</a>
-               <a href="${base}#contact"  class="nav-item">Contact</a>
+            ? `<a href="${root}#about"    class="nav-item">About</a>
+               <a href="${root}#projects" class="nav-item active">Projects</a>
+               <a href="${root}#contact"  class="nav-item">Contact</a>
                <a href="${base}files/resume.pdf" target="_blank" rel="noopener" class="nav-item nav-item-resume">Resume ↗</a>`
             : `<a href="#about"    data-section="about"    class="nav-item active">About</a>
                <a href="#projects" data-section="projects" class="nav-item">Projects</a>
