@@ -88,13 +88,6 @@ const formNotice  = document.getElementById('formNotice');
 
 if (contactForm && formNotice) {
     contactForm.addEventListener('submit', async function (e) {
-        if (this.dataset.static) {
-            e.preventDefault();
-            formNotice.textContent = '⚠ Form not yet connected. See the comment in index.html for Formspree setup.';
-            formNotice.className = 'form-notice error';
-            return;
-        }
-
         e.preventDefault();
         const btn = this.querySelector('.btn-submit');
         btn.textContent = 'Sending…';
@@ -167,28 +160,6 @@ document.addEventListener('keydown', e => {
         closeCertModal();
     }
 });
-
-// ── Avatar breathing animation ─────────────
-const avatar = document.querySelector('.sidebar-avatar');
-if (avatar) {
-    let avatarHovered = false;
-
-    avatar.addEventListener('mouseenter', () => {
-        avatarHovered = true;
-        avatar.classList.add('avatar-breathing');
-    });
-
-    avatar.addEventListener('mouseleave', () => {
-        avatarHovered = false;
-        // Don't remove immediately — let the current cycle complete
-    });
-
-    avatar.addEventListener('animationiteration', () => {
-        if (!avatarHovered) {
-            avatar.classList.remove('avatar-breathing');
-        }
-    });
-}
 
 // ── Footer year ────────────────────────────
 document.querySelectorAll('.footer-year').forEach(el => {

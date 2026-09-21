@@ -8,8 +8,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css?v=11">
-    <script src="js/sidebar.js?v=3"></script>
+    <link rel="stylesheet" href="css/styles.css?v=13">
+    <script src="js/sidebar.js?v=4"></script>
 </head>
 <body>
 
@@ -106,18 +106,15 @@
             <section id="contact" class="page-section">
                 <h2>Contact</h2>
                 <p class="contact-intro">Have a project, opportunity, or question? I'd love to hear from you.</p>
-                <!--
-                    To make the contact form work, sign up at https://formspree.io (free).
-                    Replace YOUR_FORM_ID below with the ID they give you.
-                    Then remove the data-static attribute.
-                -->
                 <form
                     class="contact-form"
                     id="contactForm"
-                    action="https://formspree.io/f/YOUR_FORM_ID"
+                    action="https://formspree.io/f/xzezerqg"
                     method="POST"
-                    data-static="true"
                 >
+                    <!-- Spam trap: bots fill this in, humans never see it -->
+                    <input class="hp-field" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true">
+
                     <div class="form-row">
                         <div class="form-group">
                             <label for="name">Name</label>
@@ -157,6 +154,6 @@
         </div>
     </div>
 
-    <script src="js/main.js?v=3"></script>
+    <script src="js/main.js?v=5"></script>
 </body>
 </html>

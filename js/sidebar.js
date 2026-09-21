@@ -12,16 +12,22 @@ class AppSidebar extends HTMLElement {
 
         // Nav differs by context: project pages link back to index;
         // index.html uses data-section for JS-driven switching.
+        const icon = {
+            about:    '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"></circle><path d="M4 20c0-4.4 3.6-7 8-7s8 2.6 8 7"></path></svg>',
+            projects: '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"></rect><rect x="14" y="3" width="7" height="7" rx="1.5"></rect><rect x="3" y="14" width="7" height="7" rx="1.5"></rect><rect x="14" y="14" width="7" height="7" rx="1.5"></rect></svg>',
+            contact:  '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2.5"></rect><path d="m2.5 5.5 9 6.5 9-6.5"></path></svg>',
+            resume:   '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><path d="M14 2v6h6"></path><path d="M9 15h6"></path><path d="M9 11h6"></path></svg>',
+        };
         const root = window.location.origin + '/';
         const nav = isProjectPage
-            ? `<a href="${root}#about"    class="nav-item">About</a>
-               <a href="${root}#projects" class="nav-item active">Projects</a>
-               <a href="${root}#contact"  class="nav-item">Contact</a>
-               <a href="${base}files/resume.pdf" target="_blank" rel="noopener" class="nav-item nav-item-resume">Resume ↗</a>`
-            : `<a href="#about"    data-section="about"    class="nav-item active">About</a>
-               <a href="#projects" data-section="projects" class="nav-item">Projects</a>
-               <a href="#contact"  data-section="contact"  class="nav-item">Contact</a>
-               <a href="files/resume.pdf" target="_blank" rel="noopener" class="nav-item nav-item-resume">Resume ↗</a>`;
+            ? `<a href="${root}#about"    class="nav-item">${icon.about}About</a>
+               <a href="${root}#projects" class="nav-item active">${icon.projects}Projects</a>
+               <a href="${root}#contact"  class="nav-item">${icon.contact}Contact</a>
+               <a href="${base}files/resume.pdf" target="_blank" rel="noopener" class="nav-item nav-item-resume">${icon.resume}Resume ↗</a>`
+            : `<a href="#about"    data-section="about"    class="nav-item active">${icon.about}About</a>
+               <a href="#projects" data-section="projects" class="nav-item">${icon.projects}Projects</a>
+               <a href="#contact"  data-section="contact"  class="nav-item">${icon.contact}Contact</a>
+               <a href="files/resume.pdf" target="_blank" rel="noopener" class="nav-item nav-item-resume">${icon.resume}Resume ↗</a>`;
 
         this.innerHTML = `
             <aside class="sidebar" id="sidebar">
