@@ -4,20 +4,25 @@
 
 /* ---------- Custom Properties ---------- */
 :root {
-    --bg:             #0d1117;
-    --bg-secondary:   #161b22;
-    --sidebar-bg:     #161b22;
-    --card-bg:        #1c2128;
-    --text:           #c9d1d9;
-    --text-secondary: #8b949e;
-    --text-muted:     #6e7681;
-    --accent:         #58a6ff;
-    --accent-hover:   #79b8ff;
-    --border:         #21262d;
-    --card-shadow:    0 4px 24px rgba(0, 0, 0, 0.55);
+    --bg:             #0a0a0c;
+    --bg-secondary:   #0f0f12;
+    --sidebar-bg:     #0f0f12;
+    --card-bg:        #18181c;
+    --card-bg-raised: #1e1e23;
+    --text:           #f5f5f7;
+    --text-secondary: #a1a1a8;
+    --text-muted:     #6c6c74;
+    --accent:         #0a84ff;
+    --accent-hover:   #3d9bff;
+    --accent-soft:    rgba(10, 132, 255, 0.14);
+    --border:         rgba(255, 255, 255, 0.08);
+    --border-strong:  rgba(255, 255, 255, 0.14);
+    --card-shadow:    0 10px 40px rgba(0, 0, 0, 0.45);
     --font:           'Inter', system-ui, -apple-system, sans-serif;
-    --radius:         10px;
-    --transition:     0.2s ease;
+    --radius:         14px;
+    --radius-sm:      9px;
+    --transition:     0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    --ease:           cubic-bezier(0.16, 1, 0.3, 1);
     --sidebar-width:  292px;
     --mobile-header:  56px;
 }
@@ -141,10 +146,10 @@ app-sidebar {
     overflow-y: auto;
     background: var(--sidebar-bg);
     border-right: 1px solid var(--border);
-    padding: 28px 20px 24px;
+    padding: clamp(13px, 2.4vh, 24px) 20px clamp(8px, 1.8vh, 18px);
     display: flex;
     flex-direction: column;
-    gap: 18px;
+    gap: clamp(8px, 1.45vh, 14px);
     scrollbar-width: thin;
     scrollbar-color: var(--border) transparent;
 }
@@ -176,31 +181,22 @@ app-sidebar {
 }
 
 .sidebar-avatar {
-    width: 108px;
-    height: 108px;
+    width: clamp(76px, 11vh, 100px);
+    height: clamp(76px, 11vh, 100px);
     border-radius: 50%;
     object-fit: cover;
     object-position: center top;
-    border: 2px solid var(--accent);
-    box-shadow: 0 0 0 4px rgba(88, 166, 255, 0.15);
-    margin: 0 auto 14px;
+    border: 2px solid var(--border-strong);
+    box-shadow: 0 0 0 4px transparent;
+    margin: 0 auto clamp(8px, 1.4vh, 12px);
     background: var(--card-bg);
-    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+    transition: box-shadow 0.35s var(--ease), border-color 0.35s var(--ease), transform 0.35s var(--ease);
 }
 
-.sidebar-avatar.avatar-breathing {
-    animation: avatarBreath 1.6s ease-in-out infinite;
-}
-
-@keyframes avatarBreath {
-    0%, 100% {
-        box-shadow: 0 0 0 4px rgba(88, 166, 255, 0.18);
-        border-color: var(--accent);
-    }
-    50% {
-        box-shadow: 0 0 0 9px rgba(88, 166, 255, 0.32), 0 0 22px rgba(88, 166, 255, 0.18);
-        border-color: var(--accent-hover);
-    }
+.sidebar-avatar:hover {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 4px var(--accent-soft);
+    transform: scale(1.03);
 }
 
 .sidebar-name {
@@ -216,7 +212,7 @@ app-sidebar {
     font-size: 13px;
     color: var(--text-secondary);
     font-weight: 400;
-    margin-bottom: 8px;
+    margin-bottom: clamp(5px, 1vh, 8px);
 }
 
 .sidebar-location {
@@ -225,7 +221,7 @@ app-sidebar {
     gap: 5px;
     font-size: 12px;
     color: var(--text-muted);
-    margin-bottom: 16px;
+    margin-bottom: clamp(8px, 1.4vh, 12px);
 }
 
 .sidebar-socials {
@@ -239,20 +235,25 @@ app-sidebar {
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    padding: 7px 13px;
+    padding: 7px 14px;
     background: var(--card-bg);
     border: 1px solid var(--border);
-    border-radius: 6px;
+    border-radius: 100px;
     font-size: 12px;
     font-weight: 500;
     color: var(--text-secondary);
-    transition: color var(--transition), border-color var(--transition), background var(--transition);
+    transition: color 0.2s var(--ease), border-color 0.2s var(--ease), background 0.2s var(--ease), transform 0.15s var(--ease);
 }
 
 .social-btn:hover {
     color: var(--text);
-    border-color: var(--accent);
-    background: rgba(88, 166, 255, 0.08);
+    border-color: var(--border-strong);
+    background: var(--card-bg-raised);
+    transform: translateY(-1px);
+}
+
+.social-btn:active {
+    transform: translateY(0) scale(0.96);
 }
 
 .social-icon {
@@ -267,7 +268,7 @@ app-sidebar {
     background: var(--card-bg);
     border: 1px solid var(--border);
     border-radius: var(--radius);
-    padding: 16px 18px;
+    padding: clamp(10px, 1.7vh, 14px) 18px;
 }
 
 .sidebar-label {
@@ -276,7 +277,7 @@ app-sidebar {
     letter-spacing: 0.12em;
     text-transform: uppercase;
     color: var(--text-muted);
-    margin-bottom: 12px;
+    margin-bottom: clamp(7px, 1.4vh, 12px);
 }
 
 /* ---------- Sidebar Navigation ---------- */
@@ -287,35 +288,41 @@ app-sidebar {
 }
 
 .nav-item {
-    display: block;
-    padding: 9px 12px;
-    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: clamp(7px, 1.1vh, 9px) 12px;
+    border-radius: var(--radius-sm);
     font-size: 13.5px;
-    font-weight: 400;
+    font-weight: 500;
     color: var(--text-secondary);
     background: transparent;
     border: none;
-    transition: color var(--transition), background var(--transition), transform var(--transition);
+    transition: color 0.18s var(--ease), background 0.18s var(--ease);
     letter-spacing: -0.01em;
     cursor: pointer;
 }
 
+.nav-item svg {
+    flex-shrink: 0;
+    opacity: 0.75;
+    transition: opacity 0.18s var(--ease);
+}
+
 .nav-item:hover {
     color: var(--text);
-    background: rgba(255, 255, 255, 0.06);
-    transform: translateX(3px);
+    background: rgba(255, 255, 255, 0.05);
 }
+
+.nav-item:hover svg { opacity: 1; }
 
 .nav-item.active {
-    color: var(--accent);
+    color: var(--text);
     font-weight: 600;
-    animation: navActivePulse 2.8s ease-in-out infinite;
+    background: var(--accent);
 }
 
-@keyframes navActivePulse {
-    0%, 100% { background: rgba(88, 166, 255, 0.10); }
-    50%       { background: rgba(88, 166, 255, 0.28); }
-}
+.nav-item.active svg { opacity: 1; }
 
 .nav-item-resume {
     color: var(--text-muted);
@@ -325,7 +332,7 @@ app-sidebar {
 
 .nav-item-resume:hover {
     color: var(--accent);
-    background: rgba(88, 166, 255, 0.06);
+    background: var(--accent-soft);
 }
 
 /* ---------- Skills ---------- */
@@ -342,12 +349,12 @@ app-sidebar {
     padding: 5px 10px;
     background: var(--bg-secondary);
     border: 1px solid var(--border);
-    border-radius: 5px;
+    border-radius: var(--radius-sm);
     transition: border-color var(--transition), color var(--transition);
 }
 
 .skills-list li:hover {
-    border-color: rgba(88, 166, 255, 0.4);
+    border-color: rgba(10, 132, 255, 0.4);
     color: var(--text);
 }
 
@@ -426,7 +433,7 @@ app-sidebar {
 /* ---------- Sidebar Footer ---------- */
 .sidebar-footer {
     margin-top: auto;
-    padding-top: 8px;
+    padding-top: 4px;
     font-size: 11px;
     color: var(--text-muted);
     text-align: center;
@@ -447,7 +454,7 @@ app-sidebar {
     display: none;
     height: 100%;
     overflow-y: auto;
-    padding: 52px 56px 56px;
+    padding: 64px 68px 68px;
     scrollbar-width: thin;
     scrollbar-color: var(--border) transparent;
 }
@@ -461,21 +468,21 @@ app-sidebar {
 
 .page-section.active {
     display: block;
-    animation: sectionIn 0.22s ease;
+    animation: sectionIn 0.4s var(--ease);
 }
 
 @keyframes sectionIn {
-    from { opacity: 0; transform: translateY(10px); }
+    from { opacity: 0; transform: translateY(14px); }
     to   { opacity: 1; transform: translateY(0);    }
 }
 
 .page-section h2 {
-    font-size: 26px;
+    font-size: 34px;
     font-weight: 700;
-    letter-spacing: -0.025em;
+    letter-spacing: -0.03em;
     color: var(--text);
-    margin-bottom: 28px;
-    padding-bottom: 16px;
+    margin-bottom: 32px;
+    padding-bottom: 18px;
     border-bottom: 1px solid var(--border);
     position: relative;
 }
@@ -491,7 +498,7 @@ app-sidebar {
 }
 
 .page-section.active h2::after {
-    animation: accentSlide 0.5s 0.1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    animation: accentSlide 0.6s 0.15s var(--ease) forwards;
 }
 
 @keyframes accentSlide {
@@ -566,14 +573,18 @@ app-sidebar {
     border: 1px solid var(--border);
     border-radius: var(--radius);
     overflow: hidden;
-    transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+    transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease), border-color 0.3s var(--ease);
     cursor: pointer;
 }
 
 .project-card:hover {
-    transform: translateY(-4px);
+    transform: translateY(-6px);
     box-shadow: var(--card-shadow);
-    border-color: rgba(88, 166, 255, 0.3);
+    border-color: var(--border-strong);
+}
+
+.project-card:active {
+    transform: translateY(-3px) scale(0.995);
 }
 
 .project-image-wrap {
@@ -581,6 +592,8 @@ app-sidebar {
     aspect-ratio: 4 / 3;
     overflow: hidden;
     background: var(--bg-secondary);
+    isolation: isolate;
+    transform: translateZ(0);
 }
 
 .project-image-wrap::after {
@@ -598,22 +611,25 @@ app-sidebar {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: filter 0.35s ease;
+    transition: transform 0.6s var(--ease);
 }
 
 .project-card:hover .project-image-wrap img {
-    filter: blur(3px);
+    transform: scale(1.04);
 }
 
+/* Centered in the part of the image not covered by the overlapping info panel */
 .project-overlay {
     position: absolute;
-    inset: 0;
-    background: rgba(13, 17, 23, 0.72);
+    inset: 0 0 12px;
+    z-index: 1;
+    background: rgba(10, 10, 12, 0.45);
     display: flex;
     align-items: center;
     justify-content: center;
     opacity: 0;
-    transition: opacity var(--transition);
+    transition: opacity 0.3s var(--ease);
+    pointer-events: none;
 }
 
 .project-card:hover .project-overlay {
@@ -621,13 +637,28 @@ app-sidebar {
 }
 
 .project-overlay span {
-    color: var(--text);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: #0a0a0c;
     font-size: 13px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    padding: 9px 18px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 100px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+    transform: translateY(6px) scale(0.96);
+    transition: transform 0.4s var(--ease);
+}
+
+.project-overlay span::after {
+    content: '\2192';
     font-weight: 500;
-    letter-spacing: 0.06em;
-    padding: 7px 16px;
-    border: 1.5px solid rgba(200, 220, 255, 0.5);
-    border-radius: 4px;
+}
+
+.project-card:hover .project-overlay span {
+    transform: none;
 }
 
 .project-info {
@@ -636,7 +667,7 @@ app-sidebar {
     z-index: 2;
     margin-top: -12px;
     background: var(--card-bg);
-    border-radius: 0 0 10px 10px;
+    border-radius: 0 0 var(--radius) var(--radius);
 }
 
 .project-title-row {
@@ -650,7 +681,7 @@ app-sidebar {
     flex-shrink: 0;
     background: none;
     border: 1px solid var(--border);
-    border-radius: 6px;
+    border-radius: var(--radius-sm);
     color: var(--text-secondary);
     cursor: pointer;
     font-size: 13px;
@@ -727,17 +758,11 @@ app-sidebar {
     background: var(--accent);
     border: 2px solid var(--bg);
     box-shadow: 0 0 0 1.5px var(--accent);
-    animation: timelinePulse 3.2s ease-in-out infinite;
+    transition: box-shadow 0.25s var(--ease);
 }
 
-.timeline-item:nth-child(1) .timeline-dot { animation-delay: 0s; }
-.timeline-item:nth-child(2) .timeline-dot { animation-delay: 0.8s; }
-.timeline-item:nth-child(3) .timeline-dot { animation-delay: 1.6s; }
-.timeline-item:nth-child(4) .timeline-dot { animation-delay: 2.4s; }
-
-@keyframes timelinePulse {
-    0%, 100% { box-shadow: 0 0 0 1.5px var(--accent); }
-    50%       { box-shadow: 0 0 0 1.5px var(--accent), 0 0 0 6px rgba(88, 166, 255, 0.12); }
+.timeline-item:hover .timeline-dot {
+    box-shadow: 0 0 0 1.5px var(--accent), 0 0 0 6px var(--accent-soft);
 }
 
 .timeline-year {
@@ -786,6 +811,15 @@ app-sidebar {
     margin-bottom: 30px;
 }
 
+.hp-field {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    pointer-events: none;
+}
+
 .contact-form {
     display: flex;
     flex-direction: column;
@@ -817,7 +851,7 @@ app-sidebar {
 .form-group textarea {
     padding: 10px 13px;
     border: 1.5px solid var(--border);
-    border-radius: 6px;
+    border-radius: var(--radius-sm);
     font-family: var(--font);
     font-size: 14px;
     color: var(--text);
@@ -835,22 +869,22 @@ app-sidebar {
 .form-group input:focus,
 .form-group textarea:focus {
     border-color: var(--accent);
-    box-shadow: 0 0 0 3px rgba(88, 166, 255, 0.12);
+    box-shadow: 0 0 0 3px rgba(10, 132, 255, 0.12);
 }
 
 .btn-submit {
     align-self: flex-start;
-    padding: 11px 28px;
+    padding: 12px 30px;
     background: var(--accent);
-    color: #0d1117;
+    color: #ffffff;
     border: none;
-    border-radius: 6px;
+    border-radius: 100px;
     font-family: var(--font);
-    font-size: 13.5px;
+    font-size: 14px;
     font-weight: 600;
-    letter-spacing: 0.03em;
+    letter-spacing: 0.01em;
     cursor: pointer;
-    transition: background var(--transition), transform 0.1s;
+    transition: background 0.2s var(--ease), transform 0.15s var(--ease);
 }
 
 .btn-submit:hover {
@@ -859,7 +893,7 @@ app-sidebar {
 }
 
 .btn-submit:active {
-    transform: translateY(0);
+    transform: translateY(0) scale(0.97);
 }
 
 .form-notice {
@@ -897,7 +931,7 @@ app-sidebar {
     border-radius: var(--radius);
     border: 1px solid var(--border);
     margin-bottom: 32px;
-    background: radial-gradient(ellipse at 50% 40%, #1a2535 0%, #0d1117 70%);
+    background: radial-gradient(ellipse at 50% 40%, #1c1c22 0%, #0a0a0c 70%);
 }
 
 .project-meta {
@@ -991,8 +1025,8 @@ app-sidebar {
 
 .skill-tag {
     padding: 5px 13px;
-    background: rgba(88, 166, 255, 0.1);
-    border: 1px solid rgba(88, 166, 255, 0.3);
+    background: rgba(10, 132, 255, 0.1);
+    border: 1px solid rgba(10, 132, 255, 0.3);
     border-radius: 20px;
     font-size: 12px;
     font-weight: 500;
@@ -1012,7 +1046,7 @@ app-sidebar {
     width: 100%;
     border-radius: var(--radius);
     border: 1px solid var(--border);
-    background: radial-gradient(ellipse at 50% 40%, #1a2535 0%, #0d1117 70%);
+    background: radial-gradient(ellipse at 50% 40%, #1c1c22 0%, #0a0a0c 70%);
     display: block;
 }
 
@@ -1038,7 +1072,7 @@ app-sidebar {
     width: 100%;
     border-radius: var(--radius);
     border: 1px solid var(--border);
-    background: radial-gradient(ellipse at 50% 40%, #1a2535 0%, #0d1117 70%);
+    background: radial-gradient(ellipse at 50% 40%, #1c1c22 0%, #0a0a0c 70%);
     display: block;
 }
 
@@ -1155,7 +1189,7 @@ app-sidebar {
     border: 1px solid var(--border);
     overflow: hidden;
     margin-bottom: 32px;
-    background: radial-gradient(ellipse at 50% 40%, #1a2535 0%, #0d1117 70%);
+    background: radial-gradient(ellipse at 50% 40%, #1c1c22 0%, #0a0a0c 70%);
 }
 
 .hero-carousel-track {
@@ -1211,8 +1245,8 @@ app-sidebar {
 }
 
 .carousel-btn:hover {
-    background: rgba(88, 166, 255, 0.18);
-    border-color: rgba(88, 166, 255, 0.5);
+    background: rgba(10, 132, 255, 0.18);
+    border-color: rgba(10, 132, 255, 0.5);
     color: var(--accent);
 }
 
@@ -1322,7 +1356,7 @@ app-sidebar {
 .project-logo-placeholder-icon {
     width: 26px;
     height: 20px;
-    border: 2px solid rgba(88, 166, 255, 0.22);
+    border: 2px solid rgba(10, 132, 255, 0.22);
     border-radius: 3px;
     position: relative;
 }
@@ -1336,7 +1370,7 @@ app-sidebar {
     height: 0;
     border-left: 5px solid transparent;
     border-right: 5px solid transparent;
-    border-bottom: 7px solid rgba(88, 166, 255, 0.22);
+    border-bottom: 7px solid rgba(10, 132, 255, 0.22);
 }
 .project-logo-placeholder-icon::after {
     content: '';
@@ -1347,7 +1381,7 @@ app-sidebar {
     width: 5px;
     height: 5px;
     border-radius: 50%;
-    background: rgba(88, 166, 255, 0.22);
+    background: rgba(10, 132, 255, 0.22);
 }
 
 .project-logo-meta {
@@ -1403,9 +1437,9 @@ app-sidebar {
 
 .img-modal-inner {
     background: var(--card-bg);
-    border: 1px solid rgba(88, 166, 255, 0.3);
-    box-shadow: 0 0 0 1px rgba(88, 166, 255, 0.1), 0 32px 80px rgba(0, 0, 0, 0.75);
-    border-radius: 14px;
+    border: 1px solid rgba(10, 132, 255, 0.3);
+    box-shadow: 0 0 0 1px rgba(10, 132, 255, 0.1), 0 32px 80px rgba(0, 0, 0, 0.75);
+    border-radius: var(--radius);
     width: 100%;
     max-width: 980px;
     max-height: 90vh;
@@ -1468,7 +1502,7 @@ app-sidebar {
     line-height: 1;
     cursor: pointer;
     padding: 4px 9px;
-    border-radius: 5px;
+    border-radius: var(--radius-sm);
     transition: color var(--transition), background var(--transition), border-color var(--transition);
 }
 
@@ -1482,7 +1516,7 @@ app-sidebar {
     position: relative;
     flex: 1;
     overflow: hidden;
-    background: radial-gradient(ellipse at 50% 40%, #1a2535 0%, #0d1117 70%);
+    background: radial-gradient(ellipse at 50% 40%, #1c1c22 0%, #0a0a0c 70%);
     min-height: 320px;
 }
 
@@ -1552,7 +1586,7 @@ app-sidebar {
 .img-zoomable:hover {
     transform: scale(1.015);
     box-shadow: 0 12px 40px rgba(0, 0, 0, 0.55);
-    border-color: rgba(88, 166, 255, 0.35) !important;
+    border-color: rgba(10, 132, 255, 0.35) !important;
 }
 
 /* ===========================================
@@ -1586,7 +1620,7 @@ app-sidebar {
 }
 
 .project-stat:hover {
-    border-color: rgba(88, 166, 255, 0.4);
+    border-color: rgba(10, 132, 255, 0.4);
     transition: border-color 0.2s ease;
 }
 
@@ -1628,7 +1662,7 @@ app-sidebar {
 .pdf-modal-inner {
     background: var(--card-bg);
     border: 1px solid var(--border);
-    border-radius: 12px;
+    border-radius: var(--radius);
     width: 100%;
     max-width: 820px;
     max-height: 88vh;
@@ -1661,7 +1695,7 @@ app-sidebar {
     line-height: 1;
     cursor: pointer;
     padding: 4px 9px;
-    border-radius: 5px;
+    border-radius: var(--radius-sm);
     transition: color var(--transition), background var(--transition), border-color var(--transition);
 }
 
@@ -1684,7 +1718,7 @@ app-sidebar {
     max-height: 72vh;
     object-fit: contain;
     display: block;
-    border-radius: 6px;
+    border-radius: 10px;
 }
 
 /* ===========================================
