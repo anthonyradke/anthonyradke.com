@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
+    <meta name="theme-color" content="#0a0a0c">
+    <title>Page Not Found | Anthony Radke</title>
+    <link rel="icon" href="/favicon.ico" sizes="48x48">
+    <link rel="icon" href="/images/icon-192.png" type="image/png" sizes="192x192">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <!-- Root-absolute paths: GitHub Pages serves this file at any missing URL depth -->
+    <link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="/css/styles.css?v=14">
+    <script src="/js/sidebar.js?v=5"></script>
+</head>
+<body>
+
+    <!-- MOBILE HEADER -->
+    <div class="mobile-header">
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
+        <span class="mobile-name">Anthony Radke</span>
+    </div>
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <div class="app-shell">
+
+        <!-- ========== SIDEBAR ========== -->
+        <app-sidebar></app-sidebar>
+
+        <!-- ========== MAIN CONTENT ========== -->
+        <main class="main-content">
+            <section id="not-found" class="page-section active">
+                <div class="not-found">
+                    <p class="not-found-code">Error 404</p>
+                    <h2>Page not found</h2>
+                    <p>The page you're looking for doesn't exist or has moved. Try one of these instead.</p>
+                    <div class="not-found-actions">
+                        <a href="/" class="btn-submit">Back to Home</a>
+                        <a href="/#projects" class="btn-secondary">View Projects</a>
+                        <a href="/#contact" class="btn-secondary">Contact</a>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- ========== PDF MODAL (certs only) ========== -->
+    <div class="pdf-modal" id="pdfModal" role="dialog" aria-modal="true">
+        <div class="pdf-modal-inner">
+            <div class="pdf-modal-header">
+                <span class="pdf-modal-title" id="pdfModalTitle"></span>
+                <button class="pdf-modal-close" id="pdfModalClose" aria-label="Close modal">&times;</button>
+            </div>
+            <div class="pdf-modal-body">
+                <img class="cert-img" id="certImg" alt="Certification">
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/main.js?v=6"></script>
+</body>
+</html>

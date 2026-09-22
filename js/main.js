@@ -82,6 +82,52 @@ fadeTargets.forEach((el, i) => {
     fadeObserver.observe(el);
 });
 
+// ── Contact email + copy button ────────────
+const contactEmail = document.getElementById('contactEmail');
+const copyEmailBtn = document.getElementById('copyEmail');
+const emailAddress = contactEmail
+    ? `${contactEmail.dataset.user}@${contactEmail.dataset.domain}`
+    : '';
+
+if (contactEmail) {
+    contactEmail.href = 'mailto:' + emailAddress;
+    contactEmail.querySelector('.contact-email-text').textContent = emailAddress;
+}
+
+async function copyText(text) {
+    try {
+        await navigator.clipboard.writeText(text);
+        return true;
+    } catch {
+        // Fallback for browsers without the async clipboard API
+        const ta = document.createElement('textarea');
+        ta.value = text;
+        ta.setAttribute('readonly', '');
+        ta.style.position = 'fixed';
+        ta.style.opacity = '0';
+        document.body.appendChild(ta);
+        ta.select();
+        const ok = document.execCommand('copy');
+        ta.remove();
+        return ok;
+    }
+}
+
+if (copyEmailBtn && emailAddress) {
+    const label = copyEmailBtn.querySelector('span');
+    let resetTimer;
+    copyEmailBtn.addEventListener('click', async () => {
+        const ok = await copyText(emailAddress);
+        label.textContent = ok ? 'Copied!' : 'Press Ctrl+C';
+        copyEmailBtn.classList.toggle('copied', ok);
+        clearTimeout(resetTimer);
+        resetTimer = setTimeout(() => {
+            label.textContent = 'Copy';
+            copyEmailBtn.classList.remove('copied');
+        }, 2000);
+    });
+}
+
 // ── Contact form ───────────────────────────
 const contactForm = document.getElementById('contactForm');
 const formNotice  = document.getElementById('formNotice');
@@ -108,7 +154,9 @@ if (contactForm && formNotice) {
                 throw new Error('Server error');
             }
         } catch {
-            formNotice.textContent = 'Something went wrong — please email me directly.';
+            formNotice.textContent = emailAddress
+                ? `Something went wrong — please email me at ${emailAddress}.`
+                : 'Something went wrong — please email me directly.';
             formNotice.className = 'form-notice error';
         } finally {
             btn.textContent = 'Send Message';

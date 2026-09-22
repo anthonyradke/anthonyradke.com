@@ -6,9 +6,12 @@
 
 class AppSidebar extends HTMLElement {
     connectedCallback() {
-        const isProjectPage = document.location.href.includes('/projects/');
-        const slashes = (document.location.pathname.match(/\//g) || []).length;
-        const base = isProjectPage ? (slashes >= 3 ? '../../' : '../') : '';
+        // Root-absolute paths: works at any depth, including 404.html,
+        // which GitHub Pages serves for arbitrary missing URLs.
+        const path = document.location.pathname;
+        const isHome = path === '/' || path === '/index.html';
+        const isProjectPage = path.startsWith('/projects/');
+        const base = '/';
 
         // Nav differs by context: project pages link back to index;
         // index.html uses data-section for JS-driven switching.
@@ -18,12 +21,11 @@ class AppSidebar extends HTMLElement {
             contact:  '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2.5"></rect><path d="m2.5 5.5 9 6.5 9-6.5"></path></svg>',
             resume:   '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><path d="M14 2v6h6"></path><path d="M9 15h6"></path><path d="M9 11h6"></path></svg>',
         };
-        const root = window.location.origin + '/';
-        const nav = isProjectPage
-            ? `<a href="${root}#about"    class="nav-item">${icon.about}About</a>
-               <a href="${root}#projects" class="nav-item active">${icon.projects}Projects</a>
-               <a href="${root}#contact"  class="nav-item">${icon.contact}Contact</a>
-               <a href="${base}files/resume.pdf" target="_blank" rel="noopener" class="nav-item nav-item-resume">${icon.resume}Resume ↗</a>`
+        const nav = !isHome
+            ? `<a href="/#about"    class="nav-item">${icon.about}About</a>
+               <a href="/#projects" class="nav-item${isProjectPage ? ' active' : ''}">${icon.projects}Projects</a>
+               <a href="/#contact"  class="nav-item">${icon.contact}Contact</a>
+               <a href="/files/resume.pdf" target="_blank" rel="noopener" class="nav-item nav-item-resume">${icon.resume}Resume ↗</a>`
             : `<a href="#about"    data-section="about"    class="nav-item active">${icon.about}About</a>
                <a href="#projects" data-section="projects" class="nav-item">${icon.projects}Projects</a>
                <a href="#contact"  data-section="contact"  class="nav-item">${icon.contact}Contact</a>
@@ -33,7 +35,7 @@ class AppSidebar extends HTMLElement {
             <aside class="sidebar" id="sidebar">
 
                 <div class="sidebar-profile">
-                    <img src="${base}images/profile.jpg" alt="Anthony Radke" class="sidebar-avatar">
+                    <img src="${base}images/profile.webp" alt="Anthony Radke" class="sidebar-avatar" width="100" height="100">
                     <h1 class="sidebar-name">Anthony Radke</h1>
                     <p class="sidebar-role">Mechanical Engineer</p>
                     <p class="sidebar-location">
@@ -42,7 +44,7 @@ class AppSidebar extends HTMLElement {
                     </p>
                     <div class="sidebar-socials">
                         <a href="https://linkedin.com/in/anthonyradke" target="_blank" rel="noopener" class="social-btn">
-                            <img src="${base}images/linkedin-icon.png" alt="" class="social-icon" aria-hidden="true">
+                            <img src="${base}images/linkedin-icon.webp" alt="" class="social-icon" aria-hidden="true" width="14" height="14">
                             LinkedIn
                         </a>
                         <a href="https://github.com/anthonyradke" target="_blank" rel="noopener" class="social-btn">
@@ -60,7 +62,7 @@ class AppSidebar extends HTMLElement {
                     <h3 class="sidebar-label">Education</h3>
                     <div class="education-item">
                         <div class="edu-header">
-                            <img src="${base}images/cu-logo.png" alt="CU Boulder" class="edu-logo">
+                            <img src="${base}images/cu-logo.webp" alt="CU Boulder" class="edu-logo" width="30" height="30" decoding="async">
                             <div>
                                 <p class="edu-school">University of Colorado Boulder</p>
                                 <p class="edu-degree">B.S. Mechanical Engineering</p>
@@ -73,8 +75,8 @@ class AppSidebar extends HTMLElement {
                 <div class="sidebar-card">
                     <h3 class="sidebar-label">Certifications</h3>
                     <ul class="cert-list">
-                        <li class="cert-item" data-cert="${base}files/cswp-cert.png">
-                            <img src="${base}images/solidworks-icon.png" alt="" class="cert-icon" aria-hidden="true">
+                        <li class="cert-item" data-cert="${base}files/cswp-cert.webp">
+                            <img src="${base}images/solidworks-icon.webp" alt="" class="cert-icon" aria-hidden="true" width="30" height="30" decoding="async">
                             Certified SolidWorks Professional (CSWP)
                         </li>
                     </ul>

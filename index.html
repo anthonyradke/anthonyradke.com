@@ -3,13 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Anthony Radke — Mechanical Engineering Portfolio">
+    <meta name="description" content="Anthony Radke is a mechanical engineer (B.S., CU Boulder) and Certified SolidWorks Professional focused on CAD, sheet metal design, DFM, and precision mechanical systems.">
+    <meta name="theme-color" content="#0a0a0c">
     <title>Anthony Radke | Mechanical Engineer</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css?v=13">
-    <script src="js/sidebar.js?v=4"></script>
+    <link rel="canonical" href="https://anthonyradke.com/">
+    <link rel="icon" href="/favicon.ico" sizes="48x48">
+    <link rel="icon" href="/images/icon-192.png" type="image/png" sizes="192x192">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Anthony Radke">
+    <meta property="og:title" content="Anthony Radke | Mechanical Engineer">
+    <meta property="og:description" content="Mechanical engineering portfolio: CAD, sheet metal design, DFM, and precision mechanical systems.">
+    <meta property="og:url" content="https://anthonyradke.com/">
+    <meta property="og:image" content="https://anthonyradke.com/images/og-home.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Anthony Radke, Mechanical Engineer, CU Boulder">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Anthony Radke",
+        "url": "https://anthonyradke.com/",
+        "image": "https://anthonyradke.com/images/profile.webp",
+        "jobTitle": "Mechanical Engineer",
+        "email": "mailto:ar@anthonyradke.com",
+        "address": { "@type": "PostalAddress", "addressLocality": "Boulder", "addressRegion": "CO", "addressCountry": "US" },
+        "alumniOf": { "@type": "CollegeOrUniversity", "name": "University of Colorado Boulder" },
+        "hasCredential": { "@type": "EducationalOccupationalCredential", "name": "Certified SolidWorks Professional (CSWP)" },
+        "sameAs": ["https://linkedin.com/in/anthonyradke", "https://github.com/anthonyradke"]
+    }
+    </script>
+
+    <link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="css/styles.css?v=14">
+    <script src="js/sidebar.js?v=5"></script>
 </head>
 <body>
 
@@ -35,7 +66,7 @@
                 <h2>About Me</h2>
                 <div class="about-content">
                     <div class="about-image-frame">
-                        <img src="images/about.jpg" alt="Anthony Radke" class="about-image">
+                        <img src="images/about.webp" alt="Anthony Radke" class="about-image" width="1200" height="1600" fetchpriority="high">
                     </div>
                     <div class="about-text">
                         <p>Mechanical engineering student at CU Boulder with hands-on experience in CAD, precision manufacturing, and systems integration.</p>
@@ -84,13 +115,13 @@
 
                     <a href="projects/seeder/" class="project-card">
                         <div class="project-image-wrap">
-                            <img src="images/projects/seeder/poster.png" alt="Automated Precision Seed Dispensing System" loading="lazy">
+                            <img src="images/projects/seeder/poster-card.webp" alt="Automated Precision Seed Dispensing System" width="800" height="600" loading="lazy" decoding="async">
                             <div class="project-overlay"><span>View Details</span></div>
                         </div>
                         <div class="project-info">
                             <div class="project-title-row">
                                 <h3>Automated Precision Seed Dispensing System</h3>
-                                <button class="project-poster-btn" onclick="event.preventDefault(); openCertModal('images/projects/seeder/poster.png', 'Automated Precision Seed Dispensing System')" aria-label="View project poster"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg></button>
+                                <button class="project-poster-btn" onclick="event.preventDefault(); openCertModal('images/projects/seeder/poster.webp', 'Automated Precision Seed Dispensing System')" aria-label="View project poster"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg></button>
                             </div>
                             <p class="project-tags">SolidWorks &middot; Sheet Metal Design &middot; GD&amp;T &middot; DFM &middot; Rapid Prototyping</p>
                             <p class="project-desc">Modular precision seeder designed for Rooted Robotics; places single seeds into individual tray cells at 95% accuracy, integrating with their conveyor for under $5,000.</p>
@@ -106,6 +137,20 @@
             <section id="contact" class="page-section">
                 <h2>Contact</h2>
                 <p class="contact-intro">Have a project, opportunity, or question? I'd love to hear from you.</p>
+
+                <!-- Address is assembled by main.js to keep it out of plain-text scrapers -->
+                <div class="contact-email">
+                    <a class="contact-email-link" id="contactEmail" data-user="ar" data-domain="anthonyradke.com">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2.5"></rect><path d="m2.5 5.5 9 6.5 9-6.5"></path></svg>
+                        <span class="contact-email-text"></span>
+                    </a>
+                    <button type="button" class="contact-copy-btn" id="copyEmail" aria-label="Copy email address">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                        <span>Copy</span>
+                    </button>
+                </div>
+
+                <p class="contact-divider">Or send a message</p>
                 <form
                     class="contact-form"
                     id="contactForm"
@@ -154,6 +199,6 @@
         </div>
     </div>
 
-    <script src="js/main.js?v=5"></script>
+    <script src="js/main.js?v=6"></script>
 </body>
 </html>
