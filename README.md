@@ -1,28 +1,37 @@
 # anthonyradke.com
 
-Source for my personal portfolio site — static HTML/CSS/JS, hosted on GitHub Pages at
+My engineering portfolio: mechanical design, CAD and sheet metal work, with a write-up of my senior capstone
+(a precision seed-dispensing machine for Rooted Robotics). Hosted on GitHub Pages at
 [anthonyradke.com](https://anthonyradke.com).
 
-## Structure
+Hand-written HTML, CSS and JavaScript, no framework or build step. The home page is one document with About,
+Projects and Contact sections. `js/main.js` shows one at a time and keeps the URL hash in sync, so Back and
+direct links work. Longer project write-ups get their own page under `projects/`.
 
-- `index.html` — homepage
-- `projects/` — individual project pages
-- `css/`, `js/`, `images/` — site assets
-- `files/` — resume and other downloadable files
+## Layout
+
+```
+index.html          home page (About, Projects, Contact)
+projects/<name>/    one page per project write-up
+css/styles.css      all styles
+js/main.js          section switching, mobile sidebar, copy-email button, certificate viewer
+js/sidebar.js       <app-sidebar> custom element, shared by every page
+fonts/              Inter, self-hosted
+images/             project photos and renders (WebP)
+files/              resume and certificate
+```
 
 ## Running locally
 
-No build step — just serve the directory root, e.g.:
-
-```bash
+```sh
 python3 -m http.server
 ```
 
-## Images & caching
+## Notes
 
-- Images are WebP, sized to roughly 2× their largest display size. Convert new ones with ImageMagick, e.g.
-  `magick in.png -resize '1920x1920>' -quality 90 -define webp:method=6 out.webp` (use ~80 for photos).
-- Give below-the-fold `<img>`s `loading="lazy" decoding="async"`.
-- GitHub Pages caches assets for 10 minutes; bump the `?v=` query on `styles.css` / `main.js` / `sidebar.js`
-  in every HTML file after editing them.
-- Add new pages to `sitemap.xml`.
+- Images are WebP at about twice their largest display size:
+  `magick in.png -resize '1920x1920>' -quality 90 -define webp:method=6 out.webp` (around 80 for photos).
+  Anything below the fold gets `loading="lazy" decoding="async"`.
+- GitHub Pages caches assets for 10 minutes, so CSS and JS are linked with a `?v=` query. Bump it in every HTML
+  file after changing them.
+- New pages go in `sitemap.xml`.
