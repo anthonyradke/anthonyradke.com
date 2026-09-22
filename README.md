@@ -1,23 +1,29 @@
 # anthonyradke.com
 
-My engineering portfolio: mechanical design, CAD and sheet metal work, with a write-up of my senior capstone
-(a precision seed-dispensing machine for Rooted Robotics). Hosted on GitHub Pages at
-[anthonyradke.com](https://anthonyradke.com).
+The code for my engineering portfolio at [anthonyradke.com](https://anthonyradke.com). It covers my
+mechanical design, CAD and sheet metal work, plus a full write-up of my senior capstone, a precision seed
+dispenser built for Rooted Robotics.
 
-Hand-written HTML, CSS and JavaScript, no framework or build step. The home page is one document with About,
-Projects and Contact sections. `js/main.js` shows one at a time and keeps the URL hash in sync, so Back and
-direct links work. Longer project write-ups get their own page under `projects/`.
+I wrote it by hand in HTML, CSS and JavaScript. There's no framework or build step, and GitHub Pages hosts it.
 
-## Layout
+## How it works
+
+The home page has three sections: About, Projects and Contact. Only one shows at a time. Clicking a link
+switches sections and updates the URL, so the back button and shared links still work.
+
+Bigger projects get their own page in the `projects/` folder. The sidebar is a small custom HTML element in
+`js/sidebar.js`, so every page shares the same one.
+
+## Files
 
 ```
-index.html          home page (About, Projects, Contact)
-projects/<name>/    one page per project write-up
-css/styles.css      all styles
-js/main.js          section switching, mobile sidebar, copy-email button, certificate viewer
-js/sidebar.js       <app-sidebar> custom element, shared by every page
-fonts/              Inter, self-hosted
-images/             project photos and renders (WebP)
+index.html          home page
+projects/<name>/    one folder per project page
+css/styles.css      styles
+js/main.js          section switching, mobile menu, copy email button, certificate viewer
+js/sidebar.js       shared sidebar
+fonts/              Inter font files
+images/             photos and renders
 files/              resume and certificate
 ```
 
@@ -27,11 +33,11 @@ files/              resume and certificate
 python3 -m http.server
 ```
 
-## Notes
+## Notes for editing
 
-- Images are WebP at about twice their largest display size:
-  `magick in.png -resize '1920x1920>' -quality 90 -define webp:method=6 out.webp` (around 80 for photos).
-  Anything below the fold gets `loading="lazy" decoding="async"`.
-- GitHub Pages caches assets for 10 minutes, so CSS and JS are linked with a `?v=` query. Bump it in every HTML
-  file after changing them.
-- New pages go in `sitemap.xml`.
+- Images are WebP. To convert one: `magick in.png -resize '1920x1920>' -quality 90 out.webp`
+  (use about 80 for photos).
+- Images further down the page use `loading="lazy"` so the top loads first.
+- GitHub Pages caches files for 10 minutes. After changing CSS or JS, bump the `?v=` number where it's linked in
+  each HTML file so browsers grab the new version.
+- Add new pages to `sitemap.xml`.
