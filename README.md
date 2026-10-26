@@ -1,10 +1,10 @@
 # anthonyradke.com
 
-The code for my engineering portfolio at [anthonyradke.com](https://anthonyradke.com). It covers my
-mechanical design, CAD and sheet metal work, plus a full write-up of my senior capstone, a precision seed
-dispenser built for Rooted Robotics.
+Source for [anthonyradke.com](https://anthonyradke.com), a mechanical engineering portfolio: mechanical design, CAD
+and sheet metal work, plus a full write-up of a senior capstone project, a precision seed dispenser built for Rooted
+Robotics.
 
-I wrote it by hand in HTML, CSS and JavaScript. There's no framework or build step, and GitHub Pages hosts it.
+Hand-written HTML, CSS and JavaScript with no framework or build step, hosted on GitHub Pages.
 
 ## How it works
 
@@ -41,3 +41,7 @@ python3 -m http.server
 - GitHub Pages caches files for 10 minutes. After changing CSS or JS, bump the `?v=` number where it's linked in
   each HTML file so browsers grab the new version.
 - Add new pages to `sitemap.xml`.
+
+## License
+
+The code (HTML, CSS and JavaScript) is MIT licensed. Images, documents, project write-ups and other content are not; see [LICENSE](LICENSE).
