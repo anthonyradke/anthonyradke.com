@@ -165,31 +165,41 @@ if (contactForm && formNotice) {
     });
 }
 
-// ── Certification image modal ──────────────
+// ── Certification / poster image modal ─────
 const certModal      = document.getElementById('pdfModal');
 const certImg        = document.getElementById('certImg');
 const certModalTitle = document.getElementById('pdfModalTitle');
 const certModalClose = document.getElementById('pdfModalClose');
+let certCloseTimer;
+let certReturnFocus = null;
 
 function openCertModal(path, title) {
     if (!certModal) return;
+    clearTimeout(certCloseTimer);
+    certModal.classList.remove('closing');
+    certReturnFocus = document.activeElement;
     certImg.src = path;
+    certImg.alt = title;
     certModalTitle.textContent = title;
     certModal.classList.add('active');
+    closeMobileSidebar();
+    if (certModalClose) certModalClose.focus({ focusVisible: false });
 }
 
 function closeCertModal() {
-    if (!certModal) return;
+    if (!certModal || !certModal.classList.contains('active')) return;
     certModal.classList.add('closing');
-    setTimeout(() => {
+    certCloseTimer = setTimeout(() => {
         certModal.classList.remove('active', 'closing');
-        certImg.src = '';
+        certImg.removeAttribute('src');
     }, 180);
+    if (certReturnFocus && certReturnFocus.isConnected) certReturnFocus.focus();
 }
 
-document.querySelectorAll('.cert-item[data-cert]').forEach(item => {
-    item.addEventListener('click', () => {
-        openCertModal(item.dataset.cert, item.textContent.trim());
+document.querySelectorAll('[data-cert]').forEach(item => {
+    item.addEventListener('click', e => {
+        e.preventDefault();
+        openCertModal(item.dataset.cert, item.dataset.certTitle || item.textContent.trim());
     });
 });
 
@@ -204,8 +214,11 @@ if (certModal) {
 }
 
 document.addEventListener('keydown', e => {
-    if (e.key === 'Escape' && certModal && certModal.classList.contains('active')) {
-        closeCertModal();
+    if (e.key !== 'Escape') return;
+    if (certModal && certModal.classList.contains('active')) closeCertModal();
+    else if (sidebar && sidebar.classList.contains('open')) {
+        closeMobileSidebar();
+        if (mobileToggle) mobileToggle.focus();
     }
 });
 

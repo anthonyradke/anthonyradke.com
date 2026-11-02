@@ -75,9 +75,11 @@ class AppSidebar extends HTMLElement {
                 <div class="sidebar-card">
                     <h3 class="sidebar-label">Certifications</h3>
                     <ul class="cert-list">
-                        <li class="cert-item" data-cert="${base}files/cswp-cert.webp">
-                            <img src="${base}images/solidworks-icon.webp" alt="" class="cert-icon" aria-hidden="true" width="30" height="30" decoding="async">
-                            Certified SolidWorks Professional (CSWP)
+                        <li>
+                            <button type="button" class="cert-item" data-cert="${base}files/cswp-cert.webp">
+                                <img src="${base}images/solidworks-icon.webp" alt="" class="cert-icon" aria-hidden="true" width="30" height="30" decoding="async">
+                                Certified SolidWorks Professional (CSWP)
+                            </button>
                         </li>
                     </ul>
                 </div>

@@ -24,8 +24,8 @@
 
     <link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="../../images/projects/seeder/carousel1.webp" as="image" fetchpriority="high">
-    <link rel="stylesheet" href="../../css/styles.css?v=14">
-    <script src="../../js/sidebar.js?v=5"></script>
+    <link rel="stylesheet" href="../../css/styles.css?v=15">
+    <script src="../../js/sidebar.js?v=6"></script>
 </head>
 <body>
 
@@ -365,20 +365,20 @@
     </div>
 
     <!-- ========== PDF MODAL (certs only) ========== -->
-    <div class="pdf-modal" id="pdfModal" role="dialog" aria-modal="true">
+    <div class="pdf-modal" id="pdfModal" role="dialog" aria-modal="true" aria-labelledby="pdfModalTitle">
         <div class="pdf-modal-inner">
             <div class="pdf-modal-header">
-                <span class="pdf-modal-title" id="pdfModalTitle"></span>
+                <h2 class="pdf-modal-title" id="pdfModalTitle"></h2>
                 <button class="pdf-modal-close" id="pdfModalClose" aria-label="Close modal">&times;</button>
             </div>
             <div class="pdf-modal-body">
-                <img class="cert-img" id="certImg" alt="Certification">
+                <img class="cert-img" id="certImg" alt="">
             </div>
         </div>
     </div>
 
     <!-- ========== IMAGE MODAL ========== -->
-    <div class="img-modal" id="imgModal" role="dialog" aria-modal="true">
+    <div class="img-modal" id="imgModal" role="dialog" aria-modal="true" aria-labelledby="imgModalTitle">
         <div class="img-modal-inner">
             <div class="img-modal-header">
                 <div class="img-modal-header-left">
@@ -399,7 +399,7 @@
         </div>
     </div>
 
-    <script src="../../js/main.js?v=6"></script>
+    <script src="../../js/main.js?v=7"></script>
     <script>
     // ── Image modal ────────────────────────────────────────────────────────
     const imgModal        = document.getElementById('imgModal');
@@ -453,15 +453,24 @@
         }
     }
 
+    let imgCloseTimer;
+    let imgReturnFocus = null;
+
     function openImgModal(imgs, index) {
+        clearTimeout(imgCloseTimer);
+        imgModal.classList.remove('closing');
+        imgReturnFocus = document.activeElement;
         buildModal(imgs);
         imgModal.classList.add('active');
         modalGoTo(index, true);
+        document.getElementById('imgModalClose').focus({ focusVisible: false });
     }
 
     function closeImgModal() {
+        if (!imgModal.classList.contains('active')) return;
         imgModal.classList.add('closing');
-        setTimeout(() => imgModal.classList.remove('active', 'closing'), 220);
+        imgCloseTimer = setTimeout(() => imgModal.classList.remove('active', 'closing'), 220);
+        if (imgReturnFocus && imgReturnFocus.isConnected) imgReturnFocus.focus();
     }
 
     document.getElementById('imgModalClose').addEventListener('click', closeImgModal);

@@ -39,8 +39,8 @@
     </script>
 
     <link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="css/styles.css?v=14">
-    <script src="js/sidebar.js?v=5"></script>
+    <link rel="stylesheet" href="css/styles.css?v=15">
+    <script src="js/sidebar.js?v=6"></script>
 </head>
 <body>
 
@@ -69,7 +69,7 @@
                         <img src="images/about.webp" alt="Anthony Radke" class="about-image" width="1200" height="1600" fetchpriority="high">
                     </div>
                     <div class="about-text">
-                        <p>Mechanical engineering student at CU Boulder with hands-on experience in CAD, precision manufacturing, and systems integration.</p>
+                        <p>Mechanical engineer and CU Boulder graduate (B.S., 2026) with hands-on experience in CAD, precision manufacturing, and systems integration.</p>
 
                         <div class="timeline">
 
@@ -113,22 +113,22 @@
                 <h2>Projects</h2>
                 <div class="projects-grid">
 
-                    <a href="projects/seeder/" class="project-card">
-                        <div class="project-image-wrap">
-                            <img src="images/projects/seeder/poster-card.webp" alt="Automated Precision Seed Dispensing System" width="800" height="600" loading="lazy" decoding="async">
-                            <div class="project-overlay"><span>View Details</span></div>
-                        </div>
-                        <div class="project-info">
-                            <div class="project-title-row">
-                                <h3>Automated Precision Seed Dispensing System</h3>
-                                <button class="project-poster-btn" onclick="event.preventDefault(); openCertModal('images/projects/seeder/poster.webp', 'Automated Precision Seed Dispensing System')" aria-label="View project poster"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg></button>
+                    <div class="project-card-wrap">
+                        <a href="projects/seeder/" class="project-card">
+                            <div class="project-image-wrap">
+                                <img src="images/projects/seeder/poster-card.webp" alt="Automated Precision Seed Dispensing System" width="800" height="600" loading="lazy" decoding="async">
+                                <div class="project-overlay"><span>View Details</span></div>
                             </div>
-                            <p class="project-tags">SolidWorks &middot; Sheet Metal Design &middot; GD&amp;T &middot; DFM &middot; Rapid Prototyping</p>
-                            <p class="project-desc">Modular precision seeder designed for Rooted Robotics; places single seeds into individual tray cells at 95% accuracy, integrating with their conveyor for under $5,000.</p>
-                        </div>
-                    </a>
+                            <div class="project-info">
+                                <h3>Automated Precision Seed Dispensing System</h3>
+                                <p class="project-tags">SolidWorks &middot; Sheet Metal Design &middot; GD&amp;T &middot; DFM &middot; Rapid Prototyping</p>
+                                <p class="project-desc">Modular precision seeder designed for Rooted Robotics; places single seeds into individual tray cells at 95% accuracy, integrating with their conveyor for under $5,000.</p>
+                            </div>
+                        </a>
+                        <button type="button" class="project-poster-btn" data-cert="images/projects/seeder/poster.webp" data-cert-title="Automated Precision Seed Dispensing System: Poster"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>Poster</button>
+                    </div>
 
-                    <!-- To add a project: copy the <a class="project-card"> block above and update href, img src, title, tags, and desc -->
+                    <!-- To add a project: copy the <div class="project-card-wrap"> block above and update href, img src, title, tags, and desc -->
 
                 </div>
             </section>
@@ -187,18 +187,18 @@
     </div>
 
     <!-- ========== PDF MODAL ========== -->
-    <div class="pdf-modal" id="pdfModal" role="dialog" aria-modal="true">
+    <div class="pdf-modal" id="pdfModal" role="dialog" aria-modal="true" aria-labelledby="pdfModalTitle">
         <div class="pdf-modal-inner">
             <div class="pdf-modal-header">
-                <span class="pdf-modal-title" id="pdfModalTitle"></span>
+                <h2 class="pdf-modal-title" id="pdfModalTitle"></h2>
                 <button class="pdf-modal-close" id="pdfModalClose" aria-label="Close modal">&times;</button>
             </div>
             <div class="pdf-modal-body">
-                <img class="cert-img" id="certImg" alt="Certification">
+                <img class="cert-img" id="certImg" alt="">
             </div>
         </div>
     </div>
 
-    <script src="js/main.js?v=6"></script>
+    <script src="js/main.js?v=7"></script>
 </body>
 </html>
