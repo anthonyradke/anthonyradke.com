@@ -1,31 +1,38 @@
 # anthonyradke.com
 
 Source for [anthonyradke.com](https://anthonyradke.com), a mechanical engineering portfolio: mechanical design, CAD
-and sheet metal work, plus a full write-up of a senior capstone project, a precision seed dispenser built for Rooted
+and sheet metal work, and a full write-up of a senior capstone project, a precision seed dispenser built for Rooted
 Robotics.
 
-Hand-written HTML, CSS and JavaScript with no framework or build step, hosted on GitHub Pages.
+<p align="center">
+  <img src="docs/screenshot.jpg" width="860" alt="The home page of anthonyradke.com">
+</p>
+
+## Stack
+
+Hand-written HTML, CSS and JavaScript with no framework, dependencies or build step, served by GitHub Pages from
+`main` on a custom domain. Pushing to `main` deploys.
 
 ## How it works
 
-The home page has three sections: About, Projects and Contact. Only one shows at a time. Clicking a link
-switches sections and updates the URL, so the back button and shared links still work.
+- The home page holds three sections (About, Projects, Contact) and shows one at a time. `js/main.js` switches
+  between them with `history.pushState` and restores the section from the URL hash on `popstate`, so the back
+  button and shared links work.
+- Larger projects have their own page under `projects/`.
+- The sidebar is a custom element, `<app-sidebar>`, defined in `js/sidebar.js` and shared by every page.
+- Images are WebP. Those below the first screen use `loading="lazy"`.
 
-Bigger projects get their own page in the `projects/` folder. The sidebar is a small custom HTML element in
-`js/sidebar.js`, so every page shares the same one.
+## Layout
 
-## Files
-
-```
-index.html          home page
-projects/<name>/    one folder per project page
-css/styles.css      styles
-js/main.js          section switching, mobile menu, copy email button, certificate viewer
-js/sidebar.js       shared sidebar
-fonts/              Inter font files
-images/             photos and renders
-files/              resume and certificate
-```
+| Path | Contents |
+|---|---|
+| `index.html` | Home page |
+| `projects/<name>/` | One folder per project page |
+| `css/styles.css` | Styles |
+| `js/main.js` | Section switching, mobile menu, copy-email button, certificate viewer |
+| `js/sidebar.js` | The shared sidebar element |
+| `fonts/` | Inter, self-hosted |
+| `images/`, `files/` | Photos and renders; resume and certificate |
 
 ## Running locally
 
@@ -33,15 +40,14 @@ files/              resume and certificate
 python3 -m http.server
 ```
 
-## Notes for editing
+## Editing
 
-- Images are WebP. To convert one: `magick in.png -resize '1920x1920>' -quality 90 out.webp`
-  (use about 80 for photos).
-- Images further down the page use `loading="lazy"` so the top loads first.
-- GitHub Pages caches files for 10 minutes. After changing CSS or JS, bump the `?v=` number where it's linked in
-  each HTML file so browsers grab the new version.
+- Convert new images to WebP: `magick in.png -resize '1920x1920>' -quality 90 out.webp` (about 80 for photos).
+- GitHub Pages caches files for 10 minutes. After changing CSS or JS, raise the `?v=` number where the file is
+  linked in each HTML page.
 - Add new pages to `sitemap.xml`.
 
 ## License
 
-The code (HTML, CSS and JavaScript) is MIT licensed. Images, documents, project write-ups and other content are not; see [LICENSE](LICENSE).
+The code (HTML, CSS and JavaScript) is MIT licensed. Images, documents, project write-ups and other content are
+not. See [LICENSE](LICENSE).
