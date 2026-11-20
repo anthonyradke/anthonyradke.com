@@ -12,6 +12,9 @@ class AppSidebar extends HTMLElement {
         const isHome = path === '/' || path === '/index.html';
         const isProjectPage = path.startsWith('/projects/');
         const base = '/';
+        // The home page has no title of its own, so the name is its <h1>;
+        // project and 404 pages carry their own <h1> in the main content.
+        const nameTag = isHome ? 'h1' : 'p';
 
         // Nav differs by context: project pages link back to index;
         // index.html uses data-section for JS-driven switching.
@@ -36,7 +39,7 @@ class AppSidebar extends HTMLElement {
 
                 <div class="sidebar-profile">
                     <img src="${base}images/profile.webp" alt="Anthony Radke" class="sidebar-avatar" width="100" height="100">
-                    <h1 class="sidebar-name">Anthony Radke</h1>
+                    <${nameTag} class="sidebar-name">Anthony Radke</${nameTag}>
                     <p class="sidebar-role">Mechanical Engineer</p>
                     <p class="sidebar-location">
                         <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
